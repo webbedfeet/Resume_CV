@@ -1,0 +1,32 @@
+% Adding PMID and PMCID links if they are present in the bibentry
+% This is useful for NIH-specific bibliographies and biosketches
+%
+\DeclareFieldFormat{eprint:pmcid}{%
+  PMCID\addcolon\space
+  \ifhyperref
+    {\href{http://www.ncbi.nlm.nih.gov/pmc/articles/#1}{\nolinkurl{#1}}}
+    {\nolinkurl{#1}}}
+\DeclareFieldAlias{eprint:PMC}{eprint:pmcid}
+\DeclareFieldAlias{eprint:PMCID}{eprint:pmcid}
+\DeclareFieldAlias{eprint:pmc}{eprint:pmcid}
+\DeclareFieldAlias{pmc}{eprint:pmcid}
+\DeclareFieldAlias{pmcid}{eprint:pmcid}
+\DeclareFieldAlias{pmid}{eprint:pubmed}
+
+\renewbibmacro*{doi+eprint+url}{%
+  \iftoggle{bbx:doi}
+    {\printfield{doi}}
+    {}%
+  \newunit\newblock
+  \printfield{pmcid}%
+  \newunit\newblock
+  \printfield{pmid}%
+  \newunit\newblock
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:url}
+    {\usebibmacro{url+urldate}}
+    {}}
+

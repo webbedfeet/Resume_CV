@@ -1,0 +1,206 @@
+---
+name: Abhijit
+surname: Dasgupta
+#position: "Professor"
+address: "12410 Milestone Manor Lane, Germantown MD 20876"
+phone: "(240) 813-8458"
+www: webbedfeet.netlify.com
+email: "adasgupta@araastat.com"
+twitter: webbedfeet
+github: webbedfeet
+# linkedin:
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv:
+    keep_tex: true
+    includes:
+      before_body: ["pmid.tex","name_bold.tex"]
+headcolor: 414141
+fontsize: "11pt"
+geometry: letter,margin=1in
+# docname: "Resume"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = T)
+library(vitae)
+suppressPackageStartupMessages(library(tidyverse))
+source('baretable.R')
+```
+
+# Summary
+
+I am an experienced statistician and data scientist interested in
+multidisciplinary collaborations to understand and solve problems using modern
+data analytic tools and techniques. I am also interested in the mentoring,
+education and training of the next generation of data scientists.
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "B.Stat.(Hons.)", '1993', 'Indian Statistical Institute','Kolkata, India',
+  'M.S. in Statistics', '1995','University of Washington','Seattle, WA',
+  'Ph.D. in Biostatistics','2001','University of Washington','Seattle, WA'
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, why=NULL)
+  # detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Current Positions
+```{r, results='asis'}
+tribble(
+  ~Start, ~Position, ~Organization,
+  2009, "Director and Chief Data Scientist", "ARAASTAT, Germantown, MD",
+  2010, "Consultant Biostatistician", "National Institute for Arthritis, Musculoskeletal and Skin Diseases",
+    2010, "Consultant Biostatistician", "National Institutes of Health, Bethesda, MD",
+  2011, "Chief Data Scientist and Co-Founder", "Zansors, Arlington, VA",
+  2016, "Affiliate Faculty", "Department of Systems Biology",
+  2016, "Affiliate Faculty", "George Mason University, Fairfax, VA",
+  2018, "Co-chairman", "Department of Bioinformatics and Data Science",
+  2018, "Co-chairman", "FAES Graduate School at NIH"
+) %>% 
+  mutate(Start = paste0(Start, '--')) %>% 
+  mutate(Position = glue::glue("\\textbf{{{Position}}}")) %>% 
+  gather(unit, value, -Start) %>%
+  arrange(Start, desc(unit)) %>% 
+  distinct() %>% 
+  mutate(Start = ifelse(unit=='Organization','', Start)) %>% 
+  select(-unit) %>% 
+  baretable()
+  
+  # baretable()
+  # brief_entries(Position, Start, Organization)
+# detailed_entries(Position, Start, Organization, where = "", why = "")
+```
+
+\newpage
+# Recent Teaching
+
+I am a [Carpentries](https://www.carpentries.org)-certified instructor with extensive experience 
+teaching data science using R and Python to a wide variety of corporate,
+government and academic audiences. My classes have included programming neophytes as well as 
+experienced analysts looking to enhance their skills. Workshop and training clients include Freddie Mac, the State Department and Brookings Institute. I regular teach R classes at NIH.
+
+```{r, results='asis'}
+tribble(
+  ~Start, ~Course, ~Location, ~Notes, ~URL,
+  "2019 -- present", "Data Visualization using R", "FAES, NIH", "","http://www.araastat.com/BIOF439",
+  "2019", "Programming with R", "Foreign Service Institute, Department of State","3-day workshops introducing R in a Excel-dominant environment","",
+  "2018", "SQL for Programmers", "Brookings Institute","","",
+  "2018 -- present", "Carpentries Workshops", "NIH and other locations", "both R- and Python-based", "",
+  "2017", "Machine Learning using Python", "Freddie Mac", "This is a 32-hour corporate training program covering the background, theory, usage ", "",
+  "2017", "Machine Learning using Python", "Freddie Mac", "and implementation of several machine learning methods","",
+  "2017", "Best Practices in Data Analysis", "Joint Statistical Meetings, Baltimore", "This is a continuing education course. I received all A's on my evaluations","",
+  "2016 -- present", "Practical R", "FAES, NIH", "Introductory R course", "http://www.araastat.com/BIOF339_PracticalR"
+) %>% 
+  mutate(Course = ifelse(URL=="",glue::glue("\\textbf{{{Course}}}"), 
+                         glue::glue("\\href{{{URL}}}{{\\textbf{{{Course}}}}}"))) %>% 
+  mutate(Notes = ifelse(Notes == '', '', glue::glue("\\emph{{{Notes}}}"))) %>% 
+  mutate(Description = paste(Course, Location, sep = ', ')) %>% 
+  select( -Location, -URL) %>% 
+  group_by(Course) %>% 
+  tidyr::gather(unit, value, -Start, -Course) %>% 
+  arrange(desc(Start), Course, unit) %>% 
+  mutate(Start = ifelse(unit == 'Notes','', Start)) %>% 
+  filter(value != '') %>% 
+  ungroup() %>% 
+  distinct() %>% 
+  select(Start, value) %>% 
+  baretable()
+  # mutate(Start= ifelse(Notes == '', Start, ''))
+  # select(Start, Description) %>% 
+  # baretable()
+```
+
+# Professional Service
+
+1. Member, NIH SBIR review committees related to neurobiology
+1. Member, Data Safety Monitoring Boards, National Institute of Mental Heath, NIH
+1. Reviewer for various academic journals. 
+
+# Professional Memberships
+
+1. American Statistical Association 
+ 
+# Community Leadership
+
+```{r, results='asis'}
+tribble(
+  ~Years, ~Position, ~Organization, ~Notes,
+  '2011 --', 'Co-organizer', 'Statistical Programming DC', "Originally the DC R Users Group, this meetup brings together",
+  '2011 --', "Co-organizer","Statistical Programming DC", "the DC data science community to share and discuss data science implementations in R and Python",
+  '2018-2019', 'Board of Directors', '\\href{http://www.sanskriti-dc.org}{Sanskriti, Inc.}', 'A socio-cultural organization supporting the Bengali community',
+  '2018-2019', 'Board of Directors', '\\href{http://www.sanskriti-dc.org}{Sanskriti, Inc.}', 'in Montgomery County and the greater DC area',
+  "2013-2016","Board of Directors", "\\href{https://www.datacommunitydc.org}{Data Community DC}",""
+) %>% 
+  mutate(Position = glue::glue("\\textbf{{{Position}}}")) %>% 
+  mutate(Notes = ifelse(Notes=='', Notes, glue::glue("\\emph{{{Notes}}}"))) %>% 
+  tidyr::unite('Description', c('Position','Organization'), sep = ', ') %>% 
+  group_by(Years) %>% 
+  gather(unit, value, -Years) %>%
+  arrange(desc(Years), unit) %>% 
+  ungroup() %>% 
+  distinct() %>% 
+  mutate(Years = ifelse(unit=='Notes', '', Years)) %>% 
+  filter(value!='') %>% 
+  select(-unit) %>% 
+  baretable()
+
+```
+
+\newpage
+# Publications
+
+```{r, eval=F}
+scholar::get_publications("EgaGUCwAAAAJ") %>% 
+  detailed_entries(
+    what = title,
+    when = year,
+    with = author,
+    where = journal,
+    why = cites
+  ) %>% 
+  arrange(desc(when))
+```
+
+## Ph.D. Thesis
+
+```{r}
+b1 <- bibliography_entries('../pubmed.bib') %>% select(-month)
+b1 %>% dplyr::filter(bibtype=='PhdThesis')
+```
+
+## Books
+
+```{r}
+b1 %>% dplyr::filter(bibtype=='Book') %>% arrange(desc(year))
+```
+
+## Articles
+
+```{r}
+abstract_keys <- c("Ward:2018c", "Holzinger2016", "Sheth2007", "Shamimi-Noori2007", "Tektonidou2015a", "Gibbons2009", "Natan2009", "Gibbons2009a", "Brody2009", "Bonita2009", "Ruggiero2009")
+
+
+b1 %>% dplyr::filter(bibtype=='Article') %>%
+  dplyr::filter(!(key %in% abstract_keys)) %>%
+  select(key, bibtype, title, year, author, journal, pmid, pmcid) %>%
+  arrange(desc(year))
+
+```
+
+## Abstracts
+
+```{r}
+b1 %>% dplyr::filter(key %in% abstract_keys) %>% arrange(desc(year))
+```
+
+## Current projects
+
+```{r}
+b1 %>% dplyr::filter(bibtype=='Unpublished') %>% arrange(desc(year))
+```
+

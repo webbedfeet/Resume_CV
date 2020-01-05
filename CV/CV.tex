@@ -1,0 +1,551 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\definecolor{awesome}{HTML}{414141}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\name{Abhijit}{Dasgupta}
+
+\address{12410 Milestone Manor Lane, Germantown MD 20876}
+
+\mobile{(240) 813-8458}
+\email{\href{mailto:adasgupta@araastat.com}{\nolinkurl{adasgupta@araastat.com}}}
+\homepage{webbedfeet.netlify.com}
+\github{webbedfeet}
+\twitter{webbedfeet}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+
+\usepackage{booktabs}
+
+% Templates for detailed entries
+% Arguments: what when with where why
+\usepackage{etoolbox}
+\def\detaileditem#1#2#3#4#5{%
+\cventry{#1}{#3}{#4}{#2}{\ifx#5\empty\else{\begin{cvitems}#5\end{cvitems}}\fi}\ifx#5\empty{\vspace{-4.0mm}}\else\fi}
+\def\detailedsection#1{\begin{cventries}#1\end{cventries}}
+
+% Templates for brief entries
+% Arguments: what when with
+\def\briefitem#1#2#3{\cvhonor{}{#1}{#3}{#2}}
+\def\briefsection#1{\begin{cvhonors}#1\end{cvhonors}}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+%%%% BIBLIOGRAPHY
+% Bibliography formatting
+
+\usepackage[sorting=ynt,citestyle=authoryear,bibstyle=authoryear-comp,defernumbers=true,maxnames=20,giveninits=true, bibencoding=utf8, terseinits=true, uniquename=init,dashed=false,doi=false,isbn=false,natbib=true,backend=biber]{biblatex}
+
+\DeclareFieldFormat{url}{\url{#1}}
+\DeclareFieldFormat[article]{pages}{#1}
+\DeclareFieldFormat[inproceedings]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[incollection]{pages}{\lowercase{pp.}#1}
+\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\DeclareFieldFormat[article]{title}{\MakeCapital{#1}}
+\DeclareFieldFormat[article]{url}{}
+\DeclareFieldFormat[inproceedings]{title}{#1}
+\DeclareFieldFormat{shorthandwidth}{#1}
+\DeclareFieldFormat{extradate}{}
+
+% No dot before number of articles
+\usepackage{xpatch}
+\xpatchbibmacro{volume+number+eid}{\setunit*{\adddot}}{}{}{}
+
+% Remove In: for an article.
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{%
+  \printtext{\bibstring{in}\intitlepunct}}}
+
+%\makeatletter
+%\DeclareDelimFormat[cbx@textcite]{nameyeardelim}{\addspace}
+%\makeatother
+
+\setlength{\bibitemsep}{1.8pt}
+\setlength{\bibhang}{.9cm}
+%\renewcommand{\bibfont}{\fontsize{12}{14}}
+
+\renewcommand*{\bibitem}{\addtocounter{papers}{1}\item \mbox{}\hskip-0.9cm\hbox to 0.9cm{\hfill\arabic{papers}.~\,}}
+\defbibenvironment{bibliography}
+{\list{}
+  {\setlength{\leftmargin}{\bibhang}%
+   \setlength{\itemsep}{\bibitemsep}%
+   \setlength{\parsep}{\bibparsep}}}
+{\endlist}
+{\bibitem}
+
+\renewcommand{\bibfont}{\normalfont\fontsize{10}{12.4}\selectfont}
+% Counters for keeping track of papers
+\newcounter{papers}
+
+\DeclareSortingTemplate{ty}{
+  \sort{
+    \field{title}
+  }
+  \sort{
+    \field{year}
+  }
+}
+\DeclareBibliographyCategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-4541586}
+\DeclareBibliographyCategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2178070}
+\DeclareBibliographyCategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2196994}
+\DeclareBibliographyCategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2206772}
+\DeclareBibliographyCategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2223323}
+\bibliography{/Users/abhijit/Dropbox/Resume_CV/pubmed.bib}
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {January 2020}
+    {Abhijit Dasgupta~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+% Adding PMID and PMCID links if they are present in the bibentry
+% This is useful for NIH-specific bibliographies and biosketches
+%
+\DeclareFieldFormat{eprint:pmcid}{%
+  PMCID\addcolon\space
+  \ifhyperref
+    {\href{http://www.ncbi.nlm.nih.gov/pmc/articles/#1}{\nolinkurl{#1}}}
+    {\nolinkurl{#1}}}
+\DeclareFieldAlias{eprint:PMC}{eprint:pmcid}
+\DeclareFieldAlias{eprint:PMCID}{eprint:pmcid}
+\DeclareFieldAlias{eprint:pmc}{eprint:pmcid}
+\DeclareFieldAlias{pmc}{eprint:pmcid}
+\DeclareFieldAlias{pmcid}{eprint:pmcid}
+\DeclareFieldAlias{pmid}{eprint:pubmed}
+
+\renewbibmacro*{doi+eprint+url}{%
+  \iftoggle{bbx:doi}
+    {\printfield{doi}}
+    {}%
+  \newunit\newblock
+  \printfield{pmcid}%
+  \newunit\newblock
+  \printfield{pmid}%
+  \newunit\newblock
+  \iftoggle{bbx:eprint}
+    {\usebibmacro{eprint}}
+    {}%
+  \newunit\newblock
+  \iftoggle{bbx:url}
+    {\usebibmacro{url+urldate}}
+    {}}
+% The following snippet is taken from the answer provided at
+% https://tex.stackexchange.com/a/327046/204292
+% by adn
+% This highlights my name in the bibliographies
+%
+\def\makenamesetup{%
+  \def\bibnamedelima{~}%
+  \def\bibnamedelimb{ }%
+  \def\bibnamedelimc{ }%
+  \def\bibnamedelimd{ }%
+  \def\bibnamedelimi{ }%
+  \def\bibinitperiod{.}%
+  \def\bibinitdelim{~}%
+  \def\bibinithyphendelim{.-}}
+\newcommand*{\makename}[2]{\begingroup\makenamesetup\xdef#1{#2}\endgroup}
+
+\newcommand*{\boldname}[3]{%
+  \def\lastname{#1}%
+  \def\firstname{#2}%
+  \def\firstinit{#3}}
+\boldname{}{}{}
+
+% Patch new definitions
+\renewcommand{\mkbibnamegiven}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand{\mkbibnamefamily}[1]{%
+  \ifboolexpr{ ( test {\ifdefequal{\firstname}{\namepartgiven}} or test {\ifdefequal{\firstinit}{\namepartgiven}} ) and test {\ifdefequal{\lastname}{\namepartfamily}} }
+  {\mkbibbold{#1}}{#1}%
+}
+
+\boldname{Dasgupta}{Abhijit}{A}
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+I am an experienced statistician and data scientist interested in
+multidisciplinary collaborations to understand and solve problems using modern
+data analytic tools and techniques. I am also interested in the mentoring,
+education and training of the next generation of data scientists.
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\detailedsection{\detaileditem{B.Stat.(Hons.)}{1993}{Indian Statistical Institute}{Kolkata, India}{\empty}\detaileditem{M.S. in Statistics}{1995}{University of Washington}{Seattle, WA}{\empty}\detaileditem{Ph.D. in Biostatistics}{2001}{University of Washington}{Seattle, WA}{\empty}}
+
+\hypertarget{current-positions}{%
+\section{Current Positions}\label{current-positions}}
+
+\begin{tabular}{ll}
+  2009-- & \textbf{Director and Chief Data Scientist} \\ 
+   & ARAASTAT, Germantown, MD \\ 
+  2010-- & \textbf{Consultant Biostatistician} \\ 
+   & National Institute for Arthritis, Musculoskeletal and Skin Diseases \\ 
+   & National Institutes of Health, Bethesda, MD \\ 
+  2011-- & \textbf{Chief Data Scientist and Co-Founder} \\ 
+   & Zansors, Arlington, VA \\ 
+  2016-- & \textbf{Affiliate Faculty} \\ 
+   & Department of Systems Biology \\ 
+   & George Mason University, Fairfax, VA \\ 
+  2018-- & \textbf{Co-chairman} \\ 
+   & Department of Bioinformatics and Data Science \\ 
+   & FAES Graduate School at NIH \\ 
+  \end{tabular}
+
+\newpage
+
+\hypertarget{recent-teaching}{%
+\section{Recent Teaching}\label{recent-teaching}}
+
+I am a \href{https://www.carpentries.org}{Carpentries}-certified instructor with extensive experience
+teaching data science using R and Python to a wide variety of corporate,
+government and academic audiences. My classes have included programming neophytes as well as
+experienced analysts looking to enhance their skills. Workshop and training clients include Freddie Mac, the State Department and Brookings Institute. I regular teach R classes at NIH.
+
+\begin{tabular}{ll}
+  2019 -- present & \href{http://www.araastat.com/BIOF439}{\textbf{Data Visualization using R}}, FAES, NIH \\ 
+  2019 & \textbf{Programming with R}, Foreign Service Institute, Department of State \\ 
+   & \emph{3-day workshops introducing R in a Excel-dominant environment} \\ 
+  2018 -- present & \textbf{Carpentries Workshops}, NIH and other locations \\ 
+   & \emph{both R- and Python-based} \\ 
+  2018 & \textbf{SQL for Programmers}, Brookings Institute \\ 
+  2017 & \textbf{Best Practices in Data Analysis}, Joint Statistical Meetings, Baltimore \\ 
+   & \emph{This is a continuing education course. I received all A's on my evaluations} \\ 
+  2017 & \textbf{Machine Learning using Python}, Freddie Mac \\ 
+   & \emph{This is a 32-hour corporate training program covering the background, theory, usage } \\ 
+   & \emph{and implementation of several machine learning methods} \\ 
+  2016 -- present & \href{http://www.araastat.com/BIOF339_PracticalR}{\textbf{Practical R}}, FAES, NIH \\ 
+   & \emph{Introductory R course} \\ 
+  \end{tabular}
+
+\hypertarget{professional-service}{%
+\section{Professional Service}\label{professional-service}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Member, NIH SBIR review committees related to neurobiology
+\item
+  Member, Data Safety Monitoring Boards, National Institute of Mental Heath, NIH
+\item
+  Reviewer for various academic journals.
+\end{enumerate}
+
+\hypertarget{professional-memberships}{%
+\section{Professional Memberships}\label{professional-memberships}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  American Statistical Association
+\end{enumerate}
+
+\hypertarget{community-leadership}{%
+\section{Community Leadership}\label{community-leadership}}
+
+\begin{tabular}{ll}
+  2018-2019 & \textbf{Board of Directors}, \href{http://www.sanskriti-dc.org}{Sanskriti, Inc.} \\ 
+   & \emph{A socio-cultural organization supporting the Bengali community} \\ 
+   & \emph{in Montgomery County and the greater DC area} \\ 
+  2013-2016 & \textbf{Board of Directors}, \href{https://www.datacommunitydc.org}{Data Community DC} \\ 
+  2011 -- & \textbf{Co-organizer}, Statistical Programming DC \\ 
+   & \emph{Originally the DC R Users Group, this meetup brings together} \\ 
+   & \emph{the DC data science community to share and discuss data science implementations in R and Python} \\ 
+  \end{tabular}
+
+\newpage
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
+
+\hypertarget{ph.d.thesis}{%
+\subsection{Ph.D.~Thesis}\label{ph.d.thesis}}
+
+\defbibheading{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-4541586}{}
+\addtocategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-4541586}{Dasgupta2001}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-4541586,heading=none]\setcounter{papers}{0}
+
+\nocite{Dasgupta2001}
+
+\hypertarget{books}{%
+\subsection{Books}\label{books}}
+
+\defbibheading{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2178070}{}
+\addtocategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2178070}{Tattar2017,
+Ojeda2014}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2178070,heading=none]\setcounter{papers}{0}
+
+\nocite{Tattar2017,
+Ojeda2014}
+
+\hypertarget{articles}{%
+\subsection{Articles}\label{articles}}
+
+\defbibheading{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2196994}{}
+\addtocategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2196994}{Agunbiade:2020,
+Tektonidou:2019,
+Dasgupta:2019,
+Newcomer:2019,
+Tan2019,
+Jha:2018b,
+Jha:2018,
+Ward:2018,
+Wang:2018,
+Ward2017,
+Tektonidou2017,
+Ward2017b,
+Wasko2015,
+Tektonidou2016,
+Szymczak2016,
+Laucis2016,
+Tan2016,
+Wang2016,
+Holzinger2015,
+Tektonidou2015,
+Ward2016,
+Chen2014,
+Dasgupta2014,
+Greenstein2014,
+Sansbury2014,
+Bethi2013,
+Malley2013,
+Wasko2013,
+Malley2012,
+Witkiewicz2012,
+Dasgupta2011,
+Kim2011,
+Tektonidou2011,
+Bonita2010,
+Gu2010,
+Lin2010,
+Toll2010,
+Williams2010,
+Witkiewicz2010,
+Gu2010a,
+Costantino2009,
+Mercier2009,
+Witkiewicz2009a,
+Witkiewicz2009b,
+Witkiewicz2009,
+Malhotra2009a,
+Barbarotto2008,
+Landi2008,
+Marino2008,
+Schwartz2008,
+Witkiewicz2008,
+Pleger2007,
+Sherman2007,
+Tang2007,
+Landi2007,
+dasgupta2007non,
+Parascandola2006,
+Lleonart2005,
+Schiffman2005,
+Wang2005,
+Santos2004,
+DasGupta2002,
+Dasgupta2000,
+Murphy1999,
+Murphy1998,
+Dasgupta1998}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2196994,heading=none]\setcounter{papers}{0}
+
+\nocite{Agunbiade:2020,
+Tektonidou:2019,
+Dasgupta:2019,
+Newcomer:2019,
+Tan2019,
+Jha:2018b,
+Jha:2018,
+Ward:2018,
+Wang:2018,
+Ward2017,
+Tektonidou2017,
+Ward2017b,
+Wasko2015,
+Tektonidou2016,
+Szymczak2016,
+Laucis2016,
+Tan2016,
+Wang2016,
+Holzinger2015,
+Tektonidou2015,
+Ward2016,
+Chen2014,
+Dasgupta2014,
+Greenstein2014,
+Sansbury2014,
+Bethi2013,
+Malley2013,
+Wasko2013,
+Malley2012,
+Witkiewicz2012,
+Dasgupta2011,
+Kim2011,
+Tektonidou2011,
+Bonita2010,
+Gu2010,
+Lin2010,
+Toll2010,
+Williams2010,
+Witkiewicz2010,
+Gu2010a,
+Costantino2009,
+Mercier2009,
+Witkiewicz2009a,
+Witkiewicz2009b,
+Witkiewicz2009,
+Malhotra2009a,
+Barbarotto2008,
+Landi2008,
+Marino2008,
+Schwartz2008,
+Witkiewicz2008,
+Pleger2007,
+Sherman2007,
+Tang2007,
+Landi2007,
+dasgupta2007non,
+Parascandola2006,
+Lleonart2005,
+Schiffman2005,
+Wang2005,
+Santos2004,
+DasGupta2002,
+Dasgupta2000,
+Murphy1999,
+Murphy1998,
+Dasgupta1998}
+
+\hypertarget{abstracts}{%
+\subsection{Abstracts}\label{abstracts}}
+
+\defbibheading{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2206772}{}
+\addtocategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2206772}{Ward:2018c,
+Holzinger2016,
+Tektonidou2015a,
+Gibbons2009,
+Natan2009,
+Gibbons2009a,
+Brody2009,
+Bonita2009,
+Ruggiero2009,
+Sheth2007,
+Shamimi-Noori2007}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2206772,heading=none]\setcounter{papers}{0}
+
+\nocite{Ward:2018c,
+Holzinger2016,
+Tektonidou2015a,
+Gibbons2009,
+Natan2009,
+Gibbons2009a,
+Brody2009,
+Bonita2009,
+Ruggiero2009,
+Sheth2007,
+Shamimi-Noori2007}
+
+\hypertarget{current-projects}{%
+\subsection{Current projects}\label{current-projects}}
+
+\defbibheading{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2223323}{}
+\addtocategory{bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2223323}{Ward:2019:hrr,
+Dasgupta2017a,
+Agubiande2017,
+Agunbiade2019a}
+\newrefcontext[sorting=none]\setcounter{papers}{0}\pagebreak[3]
+\printbibliography[category=bib-/Users/abhijit/Dropbox/Resume_CV/pubmed.bib-2223323,heading=none]\setcounter{papers}{0}
+
+\nocite{Ward:2019:hrr,
+Dasgupta2017a,
+Agubiande2017,
+Agunbiade2019a}
+
+\end{document}
