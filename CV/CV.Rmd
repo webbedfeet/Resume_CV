@@ -15,6 +15,10 @@ output:
     keep_tex: true
     includes:
       before_body: ["pmid.tex","name_bold.tex"]
+  vitae::hyndman:
+    keep_tex: true
+    includes:
+      before_body: ["pmid.tex","name_bold.tex"]
 headcolor: 414141
 fontsize: "11pt"
 geometry: letter,margin=1in
@@ -24,8 +28,9 @@ geometry: letter,margin=1in
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = T)
 library(vitae)
+library(here)
 suppressPackageStartupMessages(library(tidyverse))
-source('baretable.R')
+source(here('CV', 'baretable.R'))
 ```
 
 # Summary
@@ -37,7 +42,7 @@ education and training of the next generation of data scientists.
 
 # Education
 
-```{r}
+```{r education}
 library(tibble)
 tribble(
   ~ Degree, ~ Year, ~ Institution, ~ Where,
@@ -50,7 +55,7 @@ tribble(
 ```
 
 # Current Positions
-```{r, results='asis'}
+```{r jobs, results='asis'}
 tribble(
   ~Start, ~Position, ~Organization,
   2009, "Director and Chief Data Scientist", "ARAASTAT, Germantown, MD",
@@ -84,7 +89,7 @@ teaching data science using R and Python to a wide variety of corporate,
 government and academic audiences. My classes have included programming neophytes as well as 
 experienced analysts looking to enhance their skills. Workshop and training clients include Freddie Mac, the State Department and Brookings Institute. I regular teach R classes at NIH.
 
-```{r, results='asis'}
+```{r teaching, results='asis'}
 tribble(
   ~Start, ~Course, ~Location, ~Notes, ~URL,
   "2019 -- present", "Data Visualization using R", "FAES, NIH", "","http://www.araastat.com/BIOF439",
@@ -127,7 +132,7 @@ tribble(
  
 # Community Leadership
 
-```{r, results='asis'}
+```{r leader, results='asis'}
 tribble(
   ~Years, ~Position, ~Organization, ~Notes,
   '2011 --', 'Co-organizer', 'Statistical Programming DC', "Originally the DC R Users Group, this meetup brings together",
@@ -154,7 +159,7 @@ tribble(
 \newpage
 # Publications
 
-```{r, eval=F}
+```{r scholars, eval=F}
 scholar::get_publications("EgaGUCwAAAAJ") %>% 
   detailed_entries(
     what = title,
@@ -168,20 +173,20 @@ scholar::get_publications("EgaGUCwAAAAJ") %>%
 
 ## Ph.D. Thesis
 
-```{r}
-b1 <- bibliography_entries('../pubmed.bib') %>% select(-month)
+```{r thesis}
+b1 <- bibliography_entries(here('pubmed.bib')) %>% select(-month)
 b1 %>% dplyr::filter(bibtype=='PhdThesis')
 ```
 
 ## Books
 
-```{r}
+```{r books}
 b1 %>% dplyr::filter(bibtype=='Book') %>% arrange(desc(year))
 ```
 
 ## Articles
 
-```{r}
+```{r articles}
 abstract_keys <- c("Ward:2018c", "Holzinger2016", "Sheth2007", "Shamimi-Noori2007", "Tektonidou2015a", "Gibbons2009", "Natan2009", "Gibbons2009a", "Brody2009", "Bonita2009", "Ruggiero2009")
 
 
@@ -194,13 +199,14 @@ b1 %>% dplyr::filter(bibtype=='Article') %>%
 
 ## Abstracts
 
-```{r}
+```{r abstracts}
 b1 %>% dplyr::filter(key %in% abstract_keys) %>% arrange(desc(year))
 ```
 
+\newpage
 ## Current projects
 
-```{r}
+```{r current}
 b1 %>% dplyr::filter(bibtype=='Unpublished') %>% arrange(desc(year))
 ```
 
