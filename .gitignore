@@ -2,7 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
-
+.Rapp.history
 **/*.log
 **/*.aux
 **/*.bbl
@@ -12,3 +12,6 @@
 **/*cache/*
 **/fonts/*
 **/LICENSE
+*.pdf
+*.blg
+*.tex

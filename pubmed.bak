@@ -1,11 +1,14 @@
-@article{Ward2020,
-	Author = {Michael M. Ward and Abhijit Dasgupta},
-	Date-Added = {2020-04-03 21:45:03 +0000},
-	Date-Modified = {2020-04-03 21:45:54 +0000},
-	Journal = {Rheumatology (Oxford)},
-	Note = {In press},
-	Title = {Pre-operative withholding of infliximab and the risk of infections after major surgery in patients with rheumatoid arthritis},
-	Year = {2020}}
+% Encoding: UTF-8
+
+@Article{Ward2020,
+  author        = {Michael M. Ward and Abhijit Dasgupta},
+  journal       = {Rheumatology (Oxford)},
+  title         = {Pre-operative withholding of infliximab and the risk of infections after major surgery in patients with rheumatoid arthritis},
+  year          = {2020},
+  note          = {In press},
+  date-added    = {2020-04-03 21:45:03 +0000},
+  date-modified = {2020-04-03 21:45:54 +0000},
+}
 
 @unpublished{swayam2,
 	Author = {Swayambunathan, Jay and Dasgupta, Abhijit and Bhattacharyya, Timothy},
@@ -38,8 +41,16 @@
 	Year = {2018},
 	Bdsk-Url-1 = {http://dx.doi.org/10.1136/lupus-2018-lsm.62}}
 
-@article{Jha:2018b,
-	Abstract = {Melorheostosis (MEL) is a rare disease of high bone mass with
+@Article{Jha:2018b,
+  author        = {Smita Jha and Nicholas Laucis and Lauren Kim and Ashkan Malayeri and Abhijit Dasgupta and Georgios Z. Papadakis and Apostolos Karantanas and Miguel Torres and Timothy Bhattacharyya},
+  journal       = {Bone},
+  title         = {{CT} analysis of anatomical distribution of melorheostosis challenges the sclerotome hypothesis},
+  year          = {2018},
+  issn          = {8756-3282},
+  month         = {dec},
+  pages         = {31 - 36},
+  volume        = {117},
+  abstract      = {Melorheostosis (MEL) is a rare disease of high bone mass with
 		patchy skeletal distribution affecting the long bones. We recently
 			reported somatic mosaic mutations in MAP2K1 in 8 of 15 patients
 			with the disease. The unique anatomic distribution of
@@ -69,24 +80,17 @@
 			studies on limb development are needed to better understand the
 			etiology, pathophysiology and pattern of disease distribution in
 			all patients with MEL.},
-	Author = {Smita Jha and Nicholas Laucis and Lauren Kim and Ashkan Malayeri and Abhijit Dasgupta and Georgios Z. Papadakis and Apostolos Karantanas and Miguel Torres and Timothy Bhattacharyya},
-	Date-Added = {2018-12-21 03:04:45 +0000},
-	Date-Modified = {2018-12-21 03:08:25 +0000},
-	Doi = {10.1016/j.bone.2018.09.005},
-	Issn = {8756-3282},
-	Journal = {Bone},
-	Keywords = {Limb development, Somatic mutation, Hyperostosis, Sclerotomes},
-	Month = {dec},
-	Pages = {31 - 36},
-	Pmid = {30218789},
-	Publisher = {Elsevier {BV}},
-	Title = {{CT} analysis of anatomical distribution of melorheostosis challenges the sclerotome hypothesis},
-	Url = {http://www.sciencedirect.com/science/article/pii/S8756328218303430},
-	Volume = {117},
-	Year = {2018},
-	Bdsk-Url-1 = {http://www.sciencedirect.com/science/article/pii/S8756328218303430},
-	Bdsk-Url-2 = {https://doi.org/10.1016/j.bone.2018.09.005},
-	Bdsk-Url-3 = {http://dx.doi.org/10.1016/j.bone.2018.09.005}}
+  bdsk-url-1    = {http://www.sciencedirect.com/science/article/pii/S8756328218303430},
+  bdsk-url-2    = {https://doi.org/10.1016/j.bone.2018.09.005},
+  bdsk-url-3    = {http://dx.doi.org/10.1016/j.bone.2018.09.005},
+  date-added    = {2018-12-21 03:04:45 +0000},
+  date-modified = {2018-12-21 03:08:25 +0000},
+  doi           = {10.1016/j.bone.2018.09.005},
+  keywords      = {Limb development, Somatic mutation, Hyperostosis, Sclerotomes},
+  pmid          = {30218789},
+  publisher     = {Elsevier {BV}},
+  url           = {http://www.sciencedirect.com/science/article/pii/S8756328218303430},
+}
 
 @article{Jha:2018,
 	Author = {Smita Jha and Nadja Fratzl-{Z}elman and Paul Roschger and Georgios Z Papadakis and Edward W Cowen and Heeseog Kang and Tanya J Lehky and Katharine Alter and Zuoming Deng and Aleksandra Ivovic and Lauren Flynn and James C Reynolds and Abhijit Dasgupta and Markku Miettinen and Eileen Lange and James Katz and Klaus Kaushofer and Joan C Marini and Richard M Siegel and Timothy Bhattacharyya},
@@ -136,31 +140,10 @@
 	Bdsk-Url-1 = {http://dx.doi.org/10.1080/10962247.2019.1576554}}
 
 @article{Wang:2018,
-	Abstract = {OBJECTIVE: To compare the efficacy of 6 tumor necrosis
-		factor-alpha inhibitors (TNFi) in treatment of ankylosing spondylitis
-			(AS) at 12 weeks and 24 weeks.  METHODS: We performed a systematic
-			literature review of randomized controlled trials of TNFi in
-			patients with active AS. We included trials that reported efficacy
-			at 10 to 14 weeks (12-week analysis) and at 24 to 30 weeks (24-week
-					analysis). We used Bayesian network metaanalysis (NMA) to
-			compare their relative efficacy to improve the Bath Ankylosing
-			Spondylitis Disease Activity Index (BASDAI), Bath Ankylosing
-			Spondylitis Functional Index (BASFI), and C-reactive protein (CRP)
-			level.
-RESULTS: We included 20 trials of 6 TNFi, with 43 treatment arms and 3220
-participants. All TNFi were significantly better than placebo in reducing
-BASDAI and BASFI at 12 weeks and 24 weeks; all but certolizumab pegol (CZP)
-were statistically better than placebo in reducing CRP at 12 weeks; all but CZP
-and infliximab-dyyb (IFX biosimilar) were significantly better than placebo in
-reducing CRP at 24 weeks. IFX was superior to the other TNFi in decreasing
-BASDAI at 12 weeks, but not at 24 weeks. Excluding 1 open-label trial, there
-were no differences among TNFi.
-CONCLUSION: Based on this NMA of clinical trials, IFX was superior to other
-TNFi in reducing BASDAI at 12 weeks, but sensitive to inclusion of an
-open-label trial, and its efficacy was diminished at 24 weeks. The analysis was
-limited by few direct comparison trials. Further study of relative safety and
-longterm effectiveness will help inform the choice of TNFi in treating active
-AS.},
+	Abstract = {OBJECTIVE: To compare the efficacy of 6 tumor necrosis factor-α inhibitors (TNFi) in treatment of ankylosing spondylitis (AS) at 12 weeks and 24 weeks.
+ETHODS: We performed a systematic literature review of randomized controlled trials of TNFi in patients with active AS. We included trials that reported efficacy at 10 to 14 weeks (12-week analysis) and at 24 to 30 weeks (24-week analysis). We used Bayesian network metaanalysis (NMA) to compare their relative efficacy to improve the Bath Ankylosing Spondylitis Disease Activity Index (BASDAI), Bath Ankylosing Spondylitis Functional Index (BASFI), and C-reactive protein (CRP) level.
+RESULTS: We included 20 trials of 6 TNFi, with 43 treatment arms and 3220 participants. All TNFi were significantly better than placebo in reducing BASDAI and BASFI at 12 weeks and 24 weeks; all but certolizumab pegol (CZP) were statistically better than placebo in reducing CRP at 12 weeks; all but CZP and infliximab-dyyb (IFX biosimilar) were significantly better than placebo in reducing CRP at 24 weeks. IFX was superior to the other TNFi in decreasing BASDAI at 12 weeks, but not at 24 weeks. Excluding 1 open-label trial, there were no differences among TNFi.
+CONCLUSION: Based on this NMA of clinical trials, IFX was superior to other TNFi in reducing BASDAI at 12 weeks, but sensitive to inclusion of an open-label trial, and its efficacy was diminished at 24 weeks. The analysis was limited by few direct comparison trials. Further study of relative safety and longterm effectiveness will help inform the choice of TNFi in treating active AS.},
 	Author = {Wang, Runsheng and Dasgupta, Abhijit and Ward, Michael M},
 	Date-Added = {2018-02-20 06:43:06 +0000},
 	Date-Modified = {2018-02-20 06:47:38 +0000},
@@ -1759,7 +1742,7 @@ AS.},
 	Bdsk-Url-2 = {http://dx.doi.org/10.1186/s13040-016-0087-3}}
 
 @article{Laucis2016,
-	Abstract = {Hospitals in which a high volume of arthroplasty procedures are performed have been observed to have better outcomes. As the number of arthroplasties has increased, it is not known whether surgical cases have shifted to high-volume hospitals. In this study, we examined the change in the volume of arthroplasties to provide a contemporary definition of "high-volume" centers, quantified surgical volume that shifted to high-volume centers, and investigated the resulting effect on complications. Data from the National (Nationwide) Inpatient Sample (2000 to 2012) were used to quantify trends in total hip arthroplasty (THA) and total knee arthroplasty (TKA) volume. Elective primary THAs and TKAs were identified and grouped by hospital by utilizing the hospital identifier, which indicates the geographic location of the hospital. County geographic and population data were obtained from the U.S. Census, and the distances between hospitals and the centroids of counties were calculated. Risk-standardized surgical complication rates for hospitals (2009 to 2012) were obtained from Medicare Hospital Compare and grouped by hospital volume. From 2000 to 2012, there was a marked increase in the number of hospitals that performed a combined volume of 00 elective primary THAs and TKAs. The number of elective primary TKAs and THAs performed annually increased from 343,000 to 851,000. In 2012, 65.5\% of the arthroplasties were performed in high-volume hospitals (400 arthroplasties annually), and 26.6\% of the arthroplasties were performed in very high-volume hospitals (1,000 procedures annually). The proportion of arthroplasties performed in low-volume hospitals (<100 arthroplasties annually) shrank from 17.9\% to 5.4\%. Very high-volume hospitals had the lowest complication rates (2.745 per 100; 95\% confidence interval [CI], 2.56 to 2.93), and low-volume hospitals had the highest complication rates (3.610 per 100; 95\% CI, 3.58 to 3.64; p < 0.0001) (odds ratio, 1.327; 95\% CI, 1.26 to 1.40). Our analysis showed that 81.9\% of the U.S. population lived within 50 miles of a high-volume hospital. Arthroplasty patients are electing to have their procedures at higher-volume hospitals in the United States. Each successively higher hospital volume category manifested a lower complication rate.},
+	Abstract = {Hospitals in which a high volume of arthroplasty procedures are performed have been observed to have better outcomes. As the number of arthroplasties has increased, it is not known whether surgical cases have shifted to high-volume hospitals. In this study, we examined the change in the volume of arthroplasties to provide a contemporary definition of "high-volume" centers, quantified surgical volume that shifted to high-volume centers, and investigated the resulting effect on complications. Data from the National (Nationwide) Inpatient Sample (2000 to 2012) were used to quantify trends in total hip arthroplasty (THA) and total knee arthroplasty (TKA) volume. Elective primary THAs and TKAs were identified and grouped by hospital by utilizing the hospital identifier, which indicates the geographic location of the hospital. County geographic and population data were obtained from the U.S. Census, and the distances between hospitals and the centroids of counties were calculated. Risk-standardized surgical complication rates for hospitals (2009 to 2012) were obtained from Medicare Hospital Compare and grouped by hospital volume. From 2000 to 2012, there was a marked increase in the number of hospitals that performed a combined volume of {\^a}¥400 elective primary THAs and TKAs. The number of elective primary TKAs and THAs performed annually increased from 343,000 to 851,000. In 2012, 65.5\% of the arthroplasties were performed in high-volume hospitals ({\^a}¥400 arthroplasties annually), and 26.6\% of the arthroplasties were performed in very high-volume hospitals ({\^a}¥1,000 procedures annually). The proportion of arthroplasties performed in low-volume hospitals (<100 arthroplasties annually) shrank from 17.9\% to 5.4\%. Very high-volume hospitals had the lowest complication rates (2.745 per 100; 95\% confidence interval [CI], 2.56 to 2.93), and low-volume hospitals had the highest complication rates (3.610 per 100; 95\% CI, 3.58 to 3.64; p < 0.0001) (odds ratio, 1.327; 95\% CI, 1.26 to 1.40). Our analysis showed that 81.9\% of the U.S. population lived within 50 miles of a high-volume hospital. Arthroplasty patients are electing to have their procedures at higher-volume hospitals in the United States. Each successively higher hospital volume category manifested a lower complication rate.},
 	Author = {Laucis, Nicholas C and Chowdhury, Mohammed and Dasgupta, Abhijit and Bhattacharyya, Timothy},
 	Citation-Subset = {AIM, IM},
 	Country = {United States},
@@ -2024,7 +2007,7 @@ AS.},
 @misc{Dasgupta2010,
 	Author = {Dasgupta, Abhijit},
 	Publisher = {useR},
-	Title = {Flexible report generation and literate programming using R and Python's docutils module},
+	Title = {Flexible report generation and literate programming using R and Python{\^a}s docutils module},
 	Year = {2010}}
 
 @unpublished{Dasgupta2017a,
@@ -2042,7 +2025,7 @@ AS.},
 	Title = {Survival Advantage of Ethnic Minorities with End-stage Renal Disease on Dialysis: The role of competing risks.}}
 
 @article{Ward2017,
-	Abstract = {In rheumatoid arthritis (RA), the patient global assessment (PGA) has been strongly associated with pain severity, but less often with other measures, including disease activity measures. We tested whether RA activity and psychological measures had direct associations with the PGA or indirect associations that were mediated by pain. We also tested whether the correlates of the PGA differed with the degree of RA activity. We studied 260 patients with active RA on 2 visits in a prospective longitudinal study. We used path analysis to test direct and indirect associations of Disease Activity Score in 28 joints (DAS28), morning stiffness, Health Assessment Questionnaire (HAQ), fatigue, physical role limitations, social functioning, depressive symptoms, and health distress with the PGA. Among the 509 visits, the median PGA score was 50 (25th-75th percentile: 24-66). Pain severity had the strongest association with the PGA, but direct associations were also found for morning stiffness severity, health distress, fatigue, and DAS28. Morning stiffness severity, DAS28, health distress, and HAQ were also indirectly associated with the PGA through pain. Among visits with DAS28 >= 5.4, pain, morning stiffness severity, and HAQ were the only determinants of the PGA. Among visits with DAS28 <4.2, health distress and age were additional determinants, and fatigue was marginally associated with the PGA. Although pain was the strongest determinant of the PGA in RA, morning stiffness severity, health distress, fatigue, and DAS28 were also important. Determinants of the PGA differed with RA activity, with health distress, age, and to a lesser degree, fatigue, contributing only in patients with less active RA.},
+	Abstract = {In rheumatoid arthritis (RA), the patient global assessment (PGA) has been strongly associated with pain severity, but less often with other measures, including disease activity measures. We tested whether RA activity and psychological measures had direct associations with the PGA or indirect associations that were mediated by pain. We also tested whether the correlates of the PGA differed with the degree of RA activity. We studied 260 patients with active RA on 2 visits in a prospective longitudinal study. We used path analysis to test direct and indirect associations of Disease Activity Score in 28 joints (DAS28), morning stiffness, Health Assessment Questionnaire (HAQ), fatigue, physical role limitations, social functioning, depressive symptoms, and health distress with the PGA. Among the 509 visits, the median PGA score was 50 (25th-75th percentile: 24-66). Pain severity had the strongest association with the PGA, but direct associations were also found for morning stiffness severity, health distress, fatigue, and DAS28. Morning stiffness severity, DAS28, health distress, and HAQ were also indirectly associated with the PGA through pain. Among visits with DAS28 ≥5.4, pain, morning stiffness severity, and HAQ were the only determinants of the PGA. Among visits with DAS28 <4.2, health distress and age were additional determinants, and fatigue was marginally associated with the PGA. Although pain was the strongest determinant of the PGA in RA, morning stiffness severity, health distress, fatigue, and DAS28 were also important. Determinants of the PGA differed with RA activity, with health distress, age, and to a lesser degree, fatigue, contributing only in patients with less active RA.},
 	Author = {Ward, Michael M and Guthrie, Lori C and Dasgupta, Abhijit},
 	Country = {United States},
 	Created = {2016-06-08},
@@ -2070,7 +2053,7 @@ AS.},
 	Bdsk-Url-2 = {http://dx.doi.org/10.1002/acr.22953}}
 
 @article{Wang2016,
-	Abstract = {To compare the efficacy of 20 non-steroidal anti-inflammatory drugs (NSAIDs) in the short-term treatment of ankylosing spondylitis (AS). We performed a systematic literature review of randomised controlled trials of NSAIDs in patients with active AS. We included trials that reported efficacy at 2-12 weeks. Efficacy outcomes were the change in pain score and change in the duration of morning stiffness. We also examined the number of adverse events. We used Bayesian network meta-analysis to compare effects directly and indirectly between drugs. We included 26 trials (66 treatment arms) of 20 NSAIDs with 3410 participants in the network meta-analysis. Fifty-eight per cent of trials had fewer than 50 participants. All 20 NSAIDs reduced pain more than placebo (standardised mean difference ranging from -0.65 to -2.2), with 15 NSAIDs significantly better than placebo. Etoricoxib was superior to celecoxib, ketoprofen and tenoxicam in pain reduction, but no other interdrug comparisons were significant. There were no significant differences among NSAIDs in decreases in the duration of morning stiffness or the likelihood of adverse events. Adverse events were uncommon in these short-term studies. In 16 trials that used NSAIDs at full doses, etoricoxib was superior to all but two other NSAIDs in pain reduction. Etoricoxib was more effective in reducing pain in AS than some other NSAIDs, but there was otherwise insufficient evidence to conclude that any particular NSAID was more effective in the treatment of AS. Comparisons were limited by small studies.},
+	Abstract = {To compare the efficacy of 20 non-steroidal anti-inflammatory drugs (NSAIDs) in the short-term treatment of ankylosing spondylitis (AS). We performed a systematic literature review of randomised controlled trials of NSAIDs in patients with active AS. We included trials that reported efficacy at 2-12 weeks. Efficacy outcomes were the change in pain score and change in the duration of morning stiffness. We also examined the number of adverse events. We used Bayesian network meta-analysis to compare effects directly and indirectly between drugs. We included 26 trials (66 treatment arms) of 20 NSAIDs with 3410 participants in the network meta-analysis. Fifty-eight per cent of trials had fewer than 50 participants. All 20 NSAIDs reduced pain more than placebo (standardised mean difference ranging from -0.65 to -2.2), with 15 NSAIDs significantly better than placebo. Etoricoxib was superior to celecoxib, ketoprofen and tenoxicam in pain reduction, but no other interdrug comparisons were significant. There were no significant differences among NSAIDs in decreases in the duration of morning stiffness or the likelihood of adverse events. Adverse events were uncommon in these short-term studies. In 16 trials that used NSAIDs at full doses, etoricoxib was superior to all but two other NSAIDs in pain reduction. Etoricoxib was more effective in reducing pain in AS than some other NSAIDs, but there was otherwise insufficient evidence to conclude that any particular NSAID was more effective in the treatment of AS. Comparisons were limited by small studies.},
 	Author = {Wang, Runsheng and Dasgupta, Abhijit and Ward, Michael M},
 	Citation-Subset = {IM},
 	Country = {England},
@@ -2367,3 +2350,5 @@ AS.},
 	Note = {\emph{Under review}},
 	Title = {Incidence of Hip Fracture of Four Decades in the Framingham Heart Study},
 	Year = {2020}}
+
+@Comment{jabref-meta: databaseType:bibtex;}

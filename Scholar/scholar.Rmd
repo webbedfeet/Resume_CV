@@ -31,14 +31,14 @@ suppressPackageStartupMessages(library(tidyverse))
 ## Publications in Google Scholar
 
 ```{r, eval=T}
-scholar::get_publications('EgaGUCwAAAAJ') %>% 
-  detailed_entries(
-    what=title,
-    when=year,
-    with = author,
-    where = journal,
-    .protect=TRUE
-  ) %>%
-  arrange(desc(when))
+scholar::get_publications('EgaGUCwAAAAJ')# %>%
+#   # detailed_entries(
+#   #   what=title,
+#   #   when=year,
+#   #   with = author,
+#   #   where = journal,
+#   #   .protect=TRUE
+#   # ) %>%
+#   arrange(desc(when))
 ```
 
