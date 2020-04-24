@@ -9,20 +9,28 @@ www: webbedfeet.netlify.com
 email: "adasgupta@araastat.com"
 twitter: webbedfeet
 github: webbedfeet
+# googlescholar: EgaGUCwAAAAJ
 linkedin: "abhijit-dasgupta-70197713"
 date: "`r format(Sys.time(), '%B %Y')`"
 docname: Resume
-aboutme: "I am an expert statistician and data scientist interested in multidisciplinary collaborations to understand and solve problems using modern data analytic tools and techniques. I work at the interface of statistics and machine learning, and have extensive experience (SME) in statistical methods, study design, machine learning and data visualization. I am an expert in using R and Python for data analytics and data science applied to a wide variety of disciplines, with over 20 years experience. I am an excellent communicator and teacher who can explain technical details well to a non-technical audience. I am also interested in the mentoring, education and training of the next generation of data scientists."
-output: vitae::awesomecv
-
+# aboutme: ""
+output: 
+  vitae::awesomecv:
+    keep_tex: true
+    includes:
+      before_body: ["bibformat.tex"]
+awesomecolor: awesome-orange
+papersize: letterpaper
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(pacman)
-p_load(char = c('vitae','tidyverse','here','readr'))
+p_load(char = c('vitae','tidyverse','here','readr','icon'))
 source(here('CV', 'baretable.R'))
 ```
+# Summary
+I am an expert statistician and data scientist interested in multidisciplinary collaborations to understand and solve problems using modern data analytic tools and techniques. I work at the interface of statistics and machine learning, and have extensive experience (SME) in statistical methods, study design, machine learning and data visualization. I am an expert in using R and Python for data analytics and data science applied to a wide variety of disciplines, with over 20 years experience. I am an excellent communicator and teacher who can explain technical details well to a non-technical audience. I am also interested in the mentoring, education and training of the next generation of data scientists.
 
 # Employment
 ## Primary
@@ -52,7 +60,8 @@ tribble(
     2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD", "Statistics and Data Science consultant",
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Statistical and predictive analytics, data visualization",
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Grant writing",
-   2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Oversee the data science and bioinformatics cirruculum, teach two high-demand classes in R (Practical R and Data Visualization using R)",
+   2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Oversee the data science and bioinformatics cirruculum",
+   2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Teach two high-demand classes in R (Practical R and Data Visualization using R)",
 ) %>% 
   mutate(Start = paste0(Start, '--')) %>% 
   detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
@@ -60,6 +69,7 @@ tribble(
 
 ```
 
+\newpage
 # Education and Training
 
 ```{r education}
@@ -77,15 +87,19 @@ tribble(
 
 # Skills
 
-```{r skills}
-tribble(
-  ~area, ~skills,
-  "Analytics", "Predictive Analytics, Machine Learning, Natural Language Processing, Feature engineering, Cross-validation",
-  "Statistics", "Regression analysis, Study design, Clinical trials, Data visualization, Survival analysis, Bayesian analysis, Simulation, Bioinformatics, Propensity scores",
-  "Programming Languages", "R (20 years), Python (15 years), SAS, SQL, Stata, C++, BASH",
-  "Markup Languages", "HTML, CSS, Markdown, LaTeX, RMarkdown",
-  "Composite skills","R packages, Shiny, SAS macros, cluster computing" 
-) %>% detailed_entries(with=area, what=skills)
+```{r skills, results='asis'}
+bl <- tribble(
+  ~area, ~skills,~when, ~where,
+  "Analytics", "Predictive Analytics, Machine Learning, Natural Language Processing, Feature engineering, Cross-validation",'', '', 
+  "Statistics", "Regression analysis, Study design, Clinical trials, Data visualization, Survival analysis, Bayesian analysis, Simulation, Bioinformatics, Propensity scores",'', '',
+  "Programming Languages", "R (20 years), Python (15 years), SAS, SQL, Stata, C++, BASH",'', '',
+  "Markup Languages", "HTML, CSS, Markdown, LaTeX, RMarkdown",'', '',
+  "Composite skills","R packages, Shiny, SAS macros, cluster computing" ,'', '',
+) %>% 
+  select(area, skills)
+
+glue::glue_data(bl[-5,], "\\textbf{{{area}}}\\newline {skills}\\newline \\newline")
+glue::glue_data(bl[5,], "\\textbf{{{area}}}\\newline {skills}")
 
 ```
 
@@ -97,12 +111,13 @@ experienced analysts looking to enhance their skills. Workshop and training clie
 
 
 # Select publications
-
 ```{r readbib, eval=T}
 
-b1 <- bibliography_entries(here('pubmed.bib')) 
+b1 <- bibliography_entries(here('pubmed.bib')) %>% select(-doi)
 
 ```
+
+`r b1 %>% dplyr::filter(bibtype=='Article') %>% nrow()` peer-reviewed publications. Full CV available on request.
 
 ## Book
 
@@ -120,9 +135,10 @@ b1 %>% dplyr::filter(bibtype=='Book') %>% arrange(desc(date)) %>% slice(2)
 b1 %>% dplyr::filter(bibtype=='Article') %>%
   # dplyr::filter(!(key %in% abstract_keys)) %>%
   dplyr::filter(str_detect(author, '^Abhijit')) %>% 
-  select(key, bibtype, title, date, author, journaltitle, pmid, pmcid) %>%
-  arrange(desc(date))
+  select(key, bibtype, title, year, author, journal, pmid, pmcid) %>%
+arrange(desc(year)) %>% 
+  slice(2:3,6)
 
 ```
 
-Over 65 peer-reviewed publications. Full CV available on demand.  
+

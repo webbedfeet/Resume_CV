@@ -21,14 +21,13 @@ output:
     keep_tex: true
     includes:
       before_body: ["pmid.tex","name_bold.tex"]
-headcolor: 414141
-fontsize: "12pt"
-geometry: letter,margin=1in
-# docname: "Resume"
+papersize: letterpaper
+docname: "Cirruculum vitae"
+awesomecolor: awesome-orange
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = T)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, cache = F)
 library(vitae)
 library(here)
 suppressPackageStartupMessages(library(tidyverse))
@@ -94,7 +93,6 @@ tribble(
   
 ```
 
-\newpage
 # Recent Teaching
 
 I am a [Carpentries](https://www.carpentries.org)-certified instructor with extensive experience 
