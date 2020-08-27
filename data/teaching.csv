@@ -1,0 +1,12 @@
+type,Start,Course,Location,Notes,URL
+courses,2020,Scientific and Analytical Visualization,Georgetown University,,
+courses,2019 -- present,Data Visualization using R,"FAES, NIH",,http://www.araastat.com/BIOF439
+courses,2017,Best Practices in Data Analysis,"Joint Statistical Meetings, Baltimore",This is a continuing education course. I received all A's on my evaluations,
+courses,2016 -- present,Practical R,"FAES, NIH",Introductory R course,http://www.araastat.com/BIOF339_PracticalR
+workshops,2020,Introduction to Data Science using Python,"FAES, NIH",3-day workshop,https://www.araastat.com/BIOF085
+workshops,2020,Introduction to Data Science using Python,Brookings Institute,,
+workshops,2019,Programming with R,"Foreign Service Institute, Department of State",3-day workshops introducing R in a Excel-dominant environment,
+workshops,2018,SQL for Programmers,Brookings Institute,,
+workshops,2018 -- present,Carpentries Workshops,NIH and other locations,both R- and Python-based,
+workshops,2017,Machine Learning using Python,Freddie Mac,"This is a 32-hour corporate training program covering the background, theory, usage",
+workshops,2017,Machine Learning using Python,Freddie Mac,and implementation of several machine learning methods,
