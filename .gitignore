@@ -1,0 +1,17 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Rapp.history
+**/*.log
+**/*.aux
+**/*.bbl
+**/*.bcf
+**/*.out
+**/*.run.xml
+**/*cache/*
+**/fonts/*
+**/LICENSE
+*.pdf
+*.blg
+*.tex

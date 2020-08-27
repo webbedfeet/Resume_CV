@@ -1,0 +1,144 @@
+---
+name: Abhijit
+surname: Dasgupta
+position: "Statistician/Data Scientist"
+address: "National Institutes of Health (Contractor)"
+phone: +1 240 813 8458
+#profilepic: mariecurie.jpg
+www: webbedfeet.netlify.com
+email: "adasgupta@araastat.com"
+twitter: webbedfeet
+github: webbedfeet
+# googlescholar: EgaGUCwAAAAJ
+linkedin: "abhijit-dasgupta-70197713"
+date: "`r format(Sys.time(), '%B %Y')`"
+docname: Resume
+# aboutme: ""
+output: 
+  vitae::awesomecv:
+    keep_tex: true
+    includes:
+      before_body: ["bibformat.tex"]
+awesomecolor: awesome-orange
+papersize: letterpaper
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(pacman)
+p_load(char = c('vitae','tidyverse','here','readr','icon'))
+source(here('CV', 'baretable.R'))
+```
+# Summary
+I am an expert statistician and data scientist interested in multidisciplinary collaborations to understand and solve problems using modern data analytic tools and techniques. I work at the interface of statistics and machine learning, and have extensive experience (SME) in statistical methods, study design, machine learning and data visualization. I am an expert in using R and Python for data analytics and data science applied to a wide variety of disciplines, with over 20 years experience. I am an excellent communicator and teacher who can explain technical details well to a non-technical audience. I am also interested in the mentoring, education and training of the next generation of data scientists.
+
+# Employment
+## Primary
+```{r}
+tribble(
+  ~Start, ~Position, ~Organization,~Where, ~Description,
+  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Statistical and Machine Learning analyses with applications in Rheumatology",
+  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Computational statistics, Bayesian methods, machine learning, simulation, survival analysis, regression, visualization",
+  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Clinical trials, large administrative databases (Medicare, NIS, NHANES), Bioinformatics",
+  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Manage and mentor postdoctoral and clinical fellows",
+  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Serve on Data Safety Monitoring Boards for National Institute of Mental Health sponsored clinical trials",
+  '2006--2009','Assistant Professor', 'Division of Biostatistics, Thomas Jefferson University','Philadelphia, PA','Methodological research',
+  '2006--2009','Assistant Professor', 'Division of Biostatistics, Thomas Jefferson University','Philadelphia, PA','Oncology bioinformatics') %>% 
+  detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
+```
+
+## Other
+
+```{r}
+tribble(
+  ~Start, ~Position, ~Organization,~Where, ~Description,
+  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Lead technical efforts in R&D, product development in a healthcare sensors startup",
+  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Algorithms, signal processing, analytics, data visualization",
+  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Supervise engineers, app developers, UI/UX experts",
+  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Principal Investigator on several NIH SBIR grants awarded to Zansors",
+  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Serve as reviewer for NIH SBIR panels on neurobiology and technology",
+    2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD", "Statistics and Data Science consultant",
+  2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Statistical and predictive analytics, data visualization",
+  2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Grant writing",
+   2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Oversee the data science and bioinformatics cirruculum",
+   2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Teach two high-demand classes in R (Practical R and Data Visualization using R)",
+) %>% 
+  mutate(Start = paste0(Start, '--')) %>% 
+  detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
+
+
+```
+
+\newpage
+# Education and Training
+
+```{r education}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,~What,
+  'Post-doctoral training','2001-2006','National Cancer Institute','Bethesda, MD','Genetic epidemiology, statistical genetics, bioinformatics',
+  'Ph.D. in Biostatistics (top 3 program globally)','2001','University of Washington','Seattle, WA',NA,
+  'M.S. in Statistics', '1995','University of Washington','Seattle, WA',NA,
+  "B.Stat.(Hons.)", '1993', 'Indian Statistical Institute','Kolkata, India',NA
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where, why=What)
+  # detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Skills
+
+```{r skills, results='asis'}
+bl <- tribble(
+  ~area, ~skills,~when, ~where,
+  "Analytics", "Predictive Analytics, Machine Learning, Natural Language Processing, Feature engineering, Cross-validation",'', '', 
+  "Statistics", "Regression analysis, Study design, Clinical trials, Data visualization, Survival analysis, Bayesian analysis, Simulation, Bioinformatics, Propensity scores",'', '',
+  "Programming Languages", "R (20 years), Python (15 years), SAS, SQL, Stata, C++, BASH",'', '',
+  "Markup Languages", "HTML, CSS, Markdown, LaTeX, RMarkdown",'', '',
+  "Composite skills","R packages, Shiny, SAS macros, cluster computing" ,'', '',
+) %>% 
+  select(area, skills)
+
+glue::glue_data(bl[-5,], "\\textbf{{{area}}}\\newline {skills}\\newline \\newline")
+glue::glue_data(bl[5,], "\\textbf{{{area}}}\\newline {skills}")
+
+```
+
+# Teaching
+I am a [Carpentries](https://www.carpentries.org)-certified instructor with extensive experience 
+teaching data science using R and Python to a wide variety of corporate,
+government and academic audiences. My classes have included programming neophytes as well as 
+experienced analysts looking to enhance their skills. Workshop and training clients include NIH, Freddie Mac, the State Department and Brookings Institute. I regular teach introductory R classes at NIH contexualized for bioinformatics.
+
+
+# Select publications
+```{r readbib, eval=T}
+
+b1 <- bibliography_entries(here('pubmed.bib')) %>% select(-doi)
+
+```
+
+`r b1 %>% dplyr::filter(bibtype=='Article') %>% nrow()` peer-reviewed publications. Full CV available on request.
+
+## Book
+
+```{r books, eval=T}
+
+b1 %>% dplyr::filter(bibtype=='Book') %>% arrange(desc(date)) %>% slice(2)
+
+
+```
+
+## Peer-reviewed publications
+
+```{r}
+
+b1 %>% dplyr::filter(bibtype=='Article') %>%
+  # dplyr::filter(!(key %in% abstract_keys)) %>%
+  dplyr::filter(str_detect(author, '^Abhijit')) %>% 
+  select(key, bibtype, title, year, author, journal, pmid, pmcid) %>%
+arrange(desc(year)) %>% 
+  slice(2:3,6)
+
+```
+
+
