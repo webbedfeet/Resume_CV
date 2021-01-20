@@ -1,8 +1,8 @@
 ---
-name: Abhijit
+name: "Dr. Abhijit"
 surname: Dasgupta
 position: "Statistician/Data Scientist"
-address: "National Institutes of Health (Contractor)"
+address: "AstraZeneca"
 phone: +1 240 813 8458
 #profilepic: mariecurie.jpg
 www: webbedfeet.netlify.com
@@ -17,8 +17,8 @@ docname: Resume
 output: 
   vitae::awesomecv:
     keep_tex: true
-    includes:
-      before_body: ["bibformat.tex"]
+    # includes:
+      # before_body: ["bibformat.tex"]
 awesomecolor: awesome-orange
 papersize: letterpaper
 ---
@@ -37,13 +37,14 @@ I am an expert statistician and data scientist interested in multidisciplinary c
 ```{r}
 tribble(
   ~Start, ~Position, ~Organization,~Where, ~Description,
-  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Statistical and Machine Learning analyses with applications in Rheumatology",
-  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Computational statistics, Bayesian methods, machine learning, simulation, survival analysis, regression, visualization",
-  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Clinical trials, large administrative databases (Medicare, NIS, NHANES), Bioinformatics",
-  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Manage and mentor postdoctoral and clinical fellows",
-  '2010--', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Serve on Data Safety Monitoring Boards for National Institute of Mental Health sponsored clinical trials",
-  '2006--2009','Assistant Professor', 'Division of Biostatistics, Thomas Jefferson University','Philadelphia, PA','Methodological research',
-  '2006--2009','Assistant Professor', 'Division of Biostatistics, Thomas Jefferson University','Philadelphia, PA','Oncology bioinformatics') %>% 
+  '2020--', "Principal Data Scientist", 'AstraZeneca', 'Gaithersburg, MD', 'Machine Learning and Biostatistics across various trial stages in oncology',
+  '2020--', "Principal Data Scientist", 'AstraZeneca', 'Gaithersburg, MD', 'Survival analysis, machine learning, real world evidence, bioinformatics', 
+  '2010-2020', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Statistical and Machine Learning analyses with applications in Rheumatology",
+  '2010-2020', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Computational statistics, Bayesian methods, machine learning, simulation, survival analysis, regression, visualization",
+  '2010-2020', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Clinical trials, large administrative databases (Medicare, NIS, NHANES), Bioinformatics",
+  '2010-2020', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Manage and mentor postdoctoral and clinical fellows",
+  '2010-2020', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Serve on Data Safety Monitoring Boards for National Institute of Mental Health sponsored clinical trials",
+  '2006--2009','Assistant Professor', 'Division of Biostatistics, Thomas Jefferson University','Philadelphia, PA','Methodological research and Oncology bioinformatics') %>% 
   detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
 ```
 
@@ -52,6 +53,7 @@ tribble(
 ```{r}
 tribble(
   ~Start, ~Position, ~Organization,~Where, ~Description,
+  2020, 'Adjunct Professor','Georgetown University', 'Washington, DC', 'Teach courses in Big Data and Cloud Computing, and Data Visualization',
   2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Lead technical efforts in R&D, product development in a healthcare sensors startup",
   2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Algorithms, signal processing, analytics, data visualization",
   2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Supervise engineers, app developers, UI/UX experts",
@@ -61,7 +63,7 @@ tribble(
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Statistical and predictive analytics, data visualization",
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Grant writing",
    2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Oversee the data science and bioinformatics cirruculum",
-   2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Teach two high-demand classes in R (Practical R and Data Visualization using R)",
+   2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Teach high-demand classes in R and Python",
 ) %>% 
   mutate(Start = paste0(Start, '--')) %>% 
   detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
@@ -123,7 +125,7 @@ b1 <- bibliography_entries(here('pubmed.bib')) %>% select(-doi)
 
 ```{r books, eval=T}
 
-b1 %>% dplyr::filter(bibtype=='Book') %>% arrange(desc(date)) %>% slice(2)
+b1 %>% dplyr::filter(bibtype=='Book') %>% arrange(desc(date)) %>% slice(1)
 
 
 ```

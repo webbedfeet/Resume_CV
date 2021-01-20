@@ -63,12 +63,10 @@ tribble(
 ```{r jobs1, results = 'asis'}
 tribble(
   ~Start, ~Position, ~Organization,~Where, ~Description,
-  2010, "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Statistical and Machine Learning analyses with applications in Rheumatology",
-  2010, "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Computational statistics, Bayesian methods, machine learning, simulation, survival analysis, regression, visualization",
-  2010, "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Clinical trials, large administrative databases (Medicare, NIS, NHANES)",
-  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Lead technical efforts in R&D, product development",
-  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Algorithms, signal processing, analytics, data visualization",
-  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Work with engineers, app developers, UI/UX experts, business leaders",
+  2020, "Principal Data Scientist", "AstraZeneca", "Gaithersburg, MD", "Biostatistics and machine learning collaboration across therapeutic areas in oncology",
+  2020, "Principal Data Scientist", "AstraZeneca", "Gaithersburg, MD", "Survival analysis, machine learning, real world evidence, software as a medical device",
+  2020, 'Adjunct Professor', 'Georgetown University','Washington DC', 'Big Data and Cloud Computing (ANLY 502)',
+  2020, 'Adjunct Professor', 'Georgetown University','Washington DC', 'Data visualization (ANLY 503)'
 ) %>% 
   mutate(Start = paste0(Start, '--')) %>% 
   detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
@@ -83,15 +81,36 @@ tribble(
   ~Start, ~Position, ~Organization,~Where, ~Description,
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD", "Statistics and Data Science consultant",
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Statistical and predictive analytics, data visualization",
+  2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","R and Python training for Data Science and Machine Learning",
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Grant writing",
-  2016, "Affiliate Faculty", "Department of Systems Biology, George Mason University", "Fairfax, VA",NA,
   2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD", "Oversee the data science and bioinformatics cirruculum",
-  2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD","Teach two high-demand classes on R (Practical R, and Data Visualization using R)",
+  2018, "Co-chairman", "Department of Bioinformatics and Data Science, FAES Graduate School at NIH","Bethesda, MD","Teach  high-demand classes on R (Practical R, and Data Visualization using R) and Python (Data Visualization using Python)",
+  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Lead technical efforts in R&D, product development",
+  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Algorithms, signal processing, analytics, data visualization",
+  2011, "Chief Data Scientist and Co-Founder", "Zansors", "Arlington, VA","Work with engineers, app developers, UI/UX experts, business leaders",
+  2016, "Affiliate Faculty", "Department of Systems Biology, George Mason University", "Fairfax, VA",NA,
 ) %>% 
   mutate(Start = paste0(Start, '--')) %>% 
   detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
   
 ```
+
+# Work History
+
+```{r previous,results='asis'}
+tribble(
+  ~Start, ~Position, ~Organization,~Where, ~Description,
+    '2010-2020', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Statistical and Machine Learning analyses with applications in Rheumatology",
+  '2010-2020', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Computational statistics, Bayesian methods, machine learning, simulation, survival analysis, regression, visualization",
+  '2010-2020', "Biostatistician (contractor with Kelly Government Services)", "National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH", "Bethesda, MD","Clinical trials, large administrative databases (Medicare, NIS, NHANES)",
+  '2009-2012', 'Director, Machine Learning','Tranzxn, LLC', 'Gaithersburg, MD', 'Developing models for predicting hospital acquired conditions',
+  '2006-2009', 'Assistant Professor', 'Division of Biostatistics, Thomas Jefferson University', 'Philadelphia, PA','Biostatistics, Bioinformatics, Oncology',
+  '2006-2009', 'Assistant Professor', 'Division of Biostatistics, Thomas Jefferson University', 'Philadelphia, PA','Supported the Kimmel Cancer Center'
+) %>% 
+  detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
+```
+
+
 
 # Recent Teaching
 
@@ -103,14 +122,15 @@ experienced analysts looking to enhance their skills. Workshop and training clie
 ```{r teaching, results='asis'}
 tribble(
   ~Start, ~Course, ~Location, ~Notes, ~URL,
-  "2019 -- present", "Data Visualization using R", "FAES, NIH", "","http://www.araastat.com/BIOF439",
+  "2021", "Data Visualization using Python", 'FAES, NIH', '', 'https://www.araastat.com/BIOF440',
+  "2019 -- present", "Data Visualization using R", "FAES, NIH", "","https://www.araastat.com/BIOF439",
   "2019", "Programming with R", "Foreign Service Institute, Department of State","3-day workshops introducing R in a Excel-dominant environment","",
   "2018", "SQL for Programmers", "Brookings Institute","","",
   "2018 -- present", "Carpentries Workshops", "NIH and other locations", "both R- and Python-based", "",
   "2017", "Machine Learning using Python", "Freddie Mac", "This is a 32-hour corporate training program covering the background, theory, usage ", "",
   "2017", "Machine Learning using Python", "Freddie Mac", "and implementation of several machine learning methods","",
   "2017", "Best Practices in Data Analysis", "Joint Statistical Meetings, Baltimore", "This is a continuing education course. I received all A's on my evaluations","",
-  "2016 -- present", "Practical R", "FAES, NIH", "Introductory R course", "http://www.araastat.com/BIOF339_PracticalR"
+  "2016 -- present", "Practical R", "FAES, NIH", "Introductory R course", "https://www.araastat.com/BIOF339"
 ) %>% 
   mutate(Course = ifelse(URL=="",glue::glue("\\textbf{{{Course}}}"), 
                          glue::glue("\\href{{{URL}}}{{\\textbf{{{Course}}}}}"))) %>% 
@@ -167,13 +187,12 @@ tribble(
 
 ```
 
-\newpage
 # Publications
 
 
 ```{r readbib, eval=T}
-b1 <- bibliography_entries(here('pubmed.bib')) %>% select(-month)
-
+b1 <- bibliography_entries(here('pubmed.bib'))
+# b1 <- as.data.frame(RefManageR::ReadBib(here('pubmed.bib')))
 ```
 
 ## Ph.D. Thesis
@@ -207,8 +226,7 @@ b1 %>% dplyr::filter(bibtype=='Article') %>%
 b1 %>% dplyr::filter(key %in% abstract_keys) %>% arrange(desc(year))
 ```
 
-\newpage
-## Current projects
+## Manuscripts in progress
 
 ```{r current, eval=T}
 b1 %>% dplyr::filter(bibtype=='Unpublished') %>% arrange(desc(year))
