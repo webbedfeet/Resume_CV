@@ -5,7 +5,7 @@ position: "Statistician/Data Scientist"
 address: "AstraZeneca"
 phone: +1 240 813 8458
 #profilepic: mariecurie.jpg
-www: webbedfeet.netlify.com
+# www: webbedfeet.netlify.com
 email: "adasgupta@araastat.com"
 twitter: webbedfeet
 github: webbedfeet
@@ -115,7 +115,9 @@ experienced analysts looking to enhance their skills. Workshop and training clie
 # Select publications
 ```{r readbib, eval=T}
 
-b1 <- bibliography_entries(here('pubmed.bib')) %>% select(-doi)
+b1 <- bibliography_entries(here('pubmed.bib')) |>
+  janitor::clean_names() |> 
+  select(-doi)
 
 ```
 

@@ -2,9 +2,13 @@
 #
 
 library(pacman)
-p_load(char = 'scholar','tidyverse','glue')
-
-gs <- get_publications('EgaGUCwAAAAJ') # Read the citations
+library(scholar)
+library(tidyverse) |> suppressMessages()
+library(glue)
+library(pins)
+board <- pins::board_folder(here::here('board'), versioned = TRUE)
+scholar_id <- 'EgaGUCwAAAAJ' # My Google Scholar ID
+gs <- get_publications(scholar_id) # Read the citations
 
 
 #' The tasks we need to extract the citation components are
@@ -39,20 +43,45 @@ gs_processed <- gs_processed %>%
          title = str_replace(title, '#','')) %>%
   filter(!is.na(year))
 
+#' Scholar often provides truncated author lists. The following code obtains
+#' full author lists from Scholar and replaces the truncated lists
+
+pubid_to_complete <- gs_processed |>
+  filter(str_detect(author, '\\.\\.\\.$')) |>
+  pull(pubid)
+
+chunk2 <- function(x,n) split(x, cut(seq_along(x), n, labels = FALSE))
+
+chunked_pubids <- chunk2(pubid_to_complete, 5)
+authors <- vector('list', 5)
+for (i in seq_along(chunked_pubids)){
+  Sys.sleep(5)
+  authors[[i]] <- get_complete_authors(scholar_id, chunked_pubids[[i]])
+}
+
+authors_tbl <- do.call(c, authors) |> as_tibble(rownames = 'pubid') |>
+  rename(full_author = value)
+
+gs_processed <- gs_processed |>
+  left_join(authors_tbl, by = 'pubid') |>
+  mutate(author = if_else(is.na(full_author), author, full_author)) |>
+  select(-full_author)
+
+board |> pin_write(gs_processed, 'scholar', versioned=TRUE, type='parquet')
 #' Create bibtex entries using `glue`. Almost all GScholar entries are journal
 #' articles, so I use that.
-writeLines(
-  glue_data(bl2,
-            "@Article{{ {key},
-          title = {{ {title} }},
-          author = {{ {author} }},
-          journal = {{ {journal} }},
-          year = {{ {year} }},
-          volume = {{ {vol} }},
-          number = {{ {num} }},
-          pages = {{ {page} }},
-          note = {{Citations: {cites}}}
-          }}
-
-          ",
-            .na = '') , 'gscholar.bib')
+# writeLines(
+#   glue_data(bl2,
+#             "@Article{{ {key},
+#           title = {{ {title} }},
+#           author = {{ {author} }},
+#           journal = {{ {journal} }},
+#           year = {{ {year} }},
+#           volume = {{ {vol} }},
+#           number = {{ {num} }},
+#           pages = {{ {page} }},
+#           note = {{Citations: {cites}}}
+#           }}
+#
+#           ",
+#             .na = '') , 'gscholar.bib')

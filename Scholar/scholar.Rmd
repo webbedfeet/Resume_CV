@@ -19,7 +19,7 @@ output:
       # before_body: ["pmid.tex","name_bold.tex"]
 headcolor: 414141
 fontsize: "12pt"
-geometry: letter,margin=1in
+# geometry: letter,margin=1in
 ---
 
 ```{r setup, include=FALSE}
