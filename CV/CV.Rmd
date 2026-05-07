@@ -55,6 +55,8 @@ education and training of the next generation of data scientists.
 ```{r jobs1, results = 'asis'}
 tribble(
   ~Start, ~Position, ~Organization,~Where, ~Description,
+  2025, "Data Science Director", "AstraZeneca", "Gaithersburg, MD", "Oncology biomarker development using statistics and machine learning",
+  2025, "Data Science Director", "AstraZeneca", "Gaithersburg, MD", "Survival analysis, Bayesian modeling",
   2020, "Data Science Associate Director", "AstraZeneca", "Gaithersburg, MD", "Biostatistics, machine learning and AI collaboration across therapeutic areas in oncology",
   2020, "Data Science Associate Director", "AstraZeneca", "Gaithersburg, MD", "Survival analysis, machine learning, biomarker discovery and development",
   2020, 'Adjunct Professor', 'Georgetown University','Washington DC', 'Data visualization (DSAN 5200)',
@@ -75,8 +77,9 @@ tribble(
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD", "Statistics and Data Science consultant",
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Statistical and predictive analytics, data visualization",
   2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","R and Python training for Data Science and Machine Learning",
-  2009, "Director and Chief Data Scientist", "ARAASTAT", "Germantown, MD","Grant writing",
   2016, "Affiliate Faculty", "Department of Systems Biology, George Mason University", "Fairfax, VA",NA,
+  2020, "Adjunct Faculty", "Data Science and Analytics, Georgetown University", "Washington, DC", NA, 
+  2026, "Adjunct Faculty", "Data Science, George Washington University", "Washington, DC", NA
 ) %>% 
   mutate(Start = paste0(Start, '--')) %>% 
   detailed_entries(what = Position, when=Start, with=Organization, where = Where, why=Description)
@@ -97,8 +100,12 @@ AstraZeneca and help organize internal data science forums and conferences.
 ```{r teaching, results='asis'}
 tribble(
   ~Start, ~Course, ~Location, ~Notes, ~URL,
+  "2026 -- present", "Applied Big Data Analytics", "George Washington University", "", "",
+  "2024 -- present", "Biological and Biomedical Data Science", "Georgetown University", "", "",
   "2024 -- present", "Data Visualization using R", "AstraZeneca", "", "",
   "2020-2023", "Practical R", "AstraZeneca", "", "",
+  "2020 -- 2025", "Advanced Data Visualization", "Georgetown University", "", "",
+  "2020 -- 2024", "Big Data Analytics and Cloud Computing", "Georgetown University", "","",
   "2021", "Data Science using Python", "FAES, NIH", "A 3-day online workshop introducing data science", "https://www.araastat.com/BIOF085",
   "2021", "Data Visualization using Python", 'FAES, NIH', '', 'https://www.araastat.com/BIOF440',
   "2019 -- 2020", "Data Visualization using R", "FAES, NIH", "","https://www.araastat.com/BIOF439",
@@ -224,17 +231,16 @@ bl %>% dplyr::filter(type=='book') %>% arrange(desc(issued))
 I have `r bl |> filter(type=='article-journal') |> nrow()` peer-reviewed publications and abstracts.  A full listing and citation statistics are available at my [Google Scholar page](https://scholar.google.com/citations?user=EgaGUCwAAAAJ&hl=en){target="_blank"}  
 \vspace{0.5cm}
 
-```{r}
+```{r, eval = FALSE}
 bl |> filter(type=='article-journal') |> arrange(desc(issued)) |> select(-URL)
 ```
 
 
-<!---
 
 # Publications
 
 
-```{r readbib, eval=T}
+```{r readbib, eval=F}
 b1 <- bibliography_entries(here('publications.bib')) 
 # b1 <- bibliography_entries(here('pubmed.bib'))
 # b1 <- as.data.frame(RefManageR::ReadBib(here('pubmed.bib')))
@@ -242,19 +248,19 @@ b1 <- bibliography_entries(here('publications.bib'))
 
 ## Ph.D. Thesis
 
-```{r thesis, eval=T}
+```{r thesis, eval=F}
 b1 %>% dplyr::filter(type=='thesis')
 ```
 
 ## Books
 
-```{r books, eval=T}
+```{r books, eval=F}
 b1 %>% dplyr::filter(type=='book') %>% arrange(desc(issued))
 ```
 
 ## Articles
 
-```{r articles, eval=T}
+```{r articles, eval=F}
 abstract_keys <- c("Ward:2018c", "Holzinger2016", "Sheth2007", "Shamimi-Noori2007", "Tektonidou2015a", "Gibbons2009", "Natan2009", "Gibbons2009a", "Brody2009", "Bonita2009", "Ruggiero2009")
 
 
