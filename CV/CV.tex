@@ -1,0 +1,498 @@
+%% Template for a CV
+%% Author: Rob J Hyndman
+
+\documentclass[10pt,letterpaper,]{article}
+\usepackage[scaled=0.86]{DejaVuSansMono}
+\usepackage[sfdefault,lf,t]{carlito}
+
+% Change color to blue
+\usepackage{color,xcolor}
+\definecolor{headcolor}{HTML}{990000}
+
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true,hidelinks]{hyperref}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{geometry}
+\geometry{left=1.75cm,right=1.75cm,top=2.2cm,bottom=2cm}
+
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\date{May 2026}
+
+
+\usepackage{paralist,ragged2e,datetime}
+\usepackage[hyphens]{url}
+\usepackage{fancyhdr,enumitem,pifont}
+\usepackage[compact,small,sf,bf]{titlesec}
+
+\RaggedRight
+\sloppy
+
+% Header and footer
+\pagestyle{fancy}
+\makeatletter
+\lhead{\sf\textcolor[gray]{0.4}{Cirruculum vitae: \@name}}
+\rhead{\sf\textcolor[gray]{0.4}{\thepage}}
+\cfoot{}
+\def\headrule{{\color[gray]{0.4}\hrule\@height\headrulewidth\@width\headwidth \vskip-\headrulewidth}}
+\makeatother
+
+% Header box
+\usepackage{tabularx}
+
+\makeatletter
+\def\name#1{\def\@name{#1}}
+\def\info#1{\def\@info{#1}}
+\makeatother
+\newcommand{\shadebox}[3][.9]{\fcolorbox[gray]{0}{#1}{\parbox{#2}{#3}}}
+
+\usepackage{calc}
+\newlength{\headerboxwidth}
+\setlength{\headerboxwidth}{\textwidth}
+%\addtolength{\headerboxwidth}{0.2cm}
+\makeatletter
+\def\maketitle{
+\thispagestyle{plain}
+\vspace*{-1.4cm}
+\shadebox[0.9]{\headerboxwidth}{\sf\color{headcolor}\hfil
+\hbox to 0.98\textwidth{\begin{tabular}{l}
+\\[-0.3cm]
+\LARGE\textbf{\@name}
+\\[0.1cm]\large Data Scientist\\[0.6cm]
+\normalsize\textbf{Cirruculum vitae}\\
+\normalsize May 2026
+\end{tabular}
+\hfill\hbox{\fontsize{9}{12}\sf
+\begin{tabular}{@{}rl@{}}
+\@info
+\end{tabular}}}\hfil
+}
+\vspace*{0.2cm}}
+\makeatother
+
+% Section headings
+\titlelabel{}
+\titlespacing{\section}{0pt}{1.5ex}{0.5ex}
+\titleformat*{\section}{\color{headcolor}\large\sf\bfseries}
+\titleformat*{\subsection}{\color{headcolor}\sf\bfseries}
+\titlespacing{\subsection}{0pt}{1ex}{0.5ex}
+
+% Miscellaneous dimensions
+\setlength{\parskip}{0ex}
+\setlength{\parindent}{0em}
+\setlength{\headheight}{15pt}
+\setlength{\tabcolsep}{0.15cm}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\setlist{itemsep=1pt}
+\setdescription{labelwidth=1.2cm,leftmargin=1.5cm,labelindent=1.5cm,font=\rm}
+
+% Make nicer bullets
+\renewcommand{\labelitemi}{\ding{228}}
+
+\usepackage{booktabs,fontawesome5}
+%\usepackage[t1,scale=0.86]{sourcecodepro}
+
+\name{Abhijit Dasgupta}
+\def\imagetop#1{\vtop{\null\hbox{#1}}}
+\info{%
+\raisebox{-0.05cm}{\imagetop{\faIcon{map-marker-alt}}} &  \imagetop{\begin{tabular}{@{}l@{}}12410
+Milestone Manor Lane, Germantown MD 20876\end{tabular}}\\ %
+% %
+%
+\faIcon{phone-alt} & +1 (240) 813-8458\\%
+\faIcon{envelope} & \href{mailto:adasgupta@araastat.com}{\nolinkurl{adasgupta@araastat.com}}\\%
+\faIcon{twitter} & \href{https://twitter.com/webbedfeet}{@webbedfeet}\\%
+\faIcon{github} & \href{https://github.com/webbedfeet}{webbedfeet}\\%
+\faIcon{linkedin} & \href{https://www.linkedin.com/in/abhijit-dasgupta-70197713}{abhijit-dasgupta-70197713}\\%
+%
+%
+%
+}
+
+
+%\usepackage{inconsolata}
+
+
+\setlength\LTleft{0pt}
+\setlength\LTright{0pt}
+
+% Pandoc CSL macros
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+
+\def\endfirstpage{\newpage}
+
+\begin{document}
+\maketitle
+
+
+\section{Summary}\label{summary}
+
+I am an expert statistician and data scientist interested in
+multidisciplinary collaborations to understand and solve problems using
+modern data analytic tools and techniques. I work at the interface of
+statistics and machine learning, and have extensive experience (SME) in
+statistical methods, study design, machine learning, Bayesian analyses
+and data visualization. I am an expert in using R and Python for data
+analytics and data science applied to a wide variety of disciplines,
+with over 20 years experience. I am an excellent communicator and
+teacher who can explain technical details well to a non-technical
+audience, while maintaining rigor in the analytic techniques used. I am
+also interested in the mentoring, education and training of the next
+generation of data scientists.
+
+\section{Current Positions}\label{current-positions}
+
+\subsection{Primary}\label{primary}
+
+\begin{longtable}{@{\extracolsep{\fill}}ll}
+2025-- & \parbox[t]{0.85\textwidth}{%
+\textbf{Data Science Director}\hfill{\footnotesize AstraZeneca}\newline
+  Gaithersburg, MD\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Oncology biomarker development using statistics and machine learning%
+\item Survival analysis, Bayesian modeling%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+2020-- & \parbox[t]{0.85\textwidth}{%
+\textbf{Data Science Associate Director}\hfill{\footnotesize AstraZeneca}\newline
+  Gaithersburg, MD\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Biostatistics, machine learning and AI collaboration across therapeutic areas in oncology%
+\item Survival analysis, machine learning, biomarker discovery and development%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+2020-- & \parbox[t]{0.85\textwidth}{%
+\textbf{Adjunct Professor}\hfill{\footnotesize Georgetown University}\newline
+  Washington DC\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Data visualization (DSAN 5200)%
+\item Big Data and Cloud Computing (DSAN 6000)%
+\item Biological and Biomedical Data Science (DSAN 6150)%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+\end{longtable}
+
+\subsection{Other}\label{other}
+
+\begin{longtable}{@{\extracolsep{\fill}}ll}
+2009-- & \parbox[t]{0.85\textwidth}{%
+\textbf{Director and Chief Data Scientist}\hfill{\footnotesize ARAASTAT}\newline
+  Germantown, MD\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Statistics and Data Science consultant%
+\item Statistical and predictive analytics, data visualization%
+\item R and Python training for Data Science and Machine Learning%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+2016-- & \parbox[t]{0.85\textwidth}{%
+\textbf{Affiliate Faculty}\hfill{\footnotesize Department of Systems Biology, George Mason University}\newline
+  Fairfax, VA\par%
+  \empty%
+\vspace{\parsep}}\\
+2020-- & \parbox[t]{0.85\textwidth}{%
+\textbf{Adjunct Faculty}\hfill{\footnotesize Data Science and Analytics, Georgetown University}\newline
+  Washington, DC\par%
+  \empty%
+\vspace{\parsep}}\\
+2026-- & \parbox[t]{0.85\textwidth}{%
+\textbf{Adjunct Faculty}\hfill{\footnotesize Data Science, George Washington University}\newline
+  Washington, DC\par%
+  \empty%
+\vspace{\parsep}}\\
+\end{longtable}
+
+\section{Recent Teaching}\label{recent-teaching}
+
+I am a \href{https://www.carpentries.org}{Carpentries}-certified
+instructor with extensive experience teaching data science using R and
+Python to a wide variety of corporate, government and academic
+audiences. My classes have included programming neophytes as well as
+experienced analysts looking to enhance their skills. Workshop and
+training clients include Freddie Mac, the State Department and Brookings
+Institute. I regularly lead highly-rated R-based training at AstraZeneca
+and help organize internal data science forums and conferences.
+
+\begin{tabular}{ll}
+  2026 -- present & \textbf{Applied Big Data Analytics}, George Washington University \\ 
+  2024 -- present & \textbf{Biological and Biomedical Data Science}, Georgetown University \\ 
+  2024 -- present & \textbf{Data Visualization using R}, AstraZeneca \\ 
+  2021 & \href{https://www.araastat.com/BIOF085}{\textbf{Data Science using Python}}, FAES, NIH \\ 
+   & \emph{A 3-day online workshop introducing data science} \\ 
+  2021 & \href{https://www.araastat.com/BIOF440}{\textbf{Data Visualization using Python}}, FAES, NIH \\ 
+  2020-2023 & \textbf{Practical R}, AstraZeneca \\ 
+  2020 -- 2025 & \textbf{Advanced Data Visualization}, Georgetown University \\ 
+  2020 -- 2024 & \textbf{Big Data Analytics and Cloud Computing}, Georgetown University \\ 
+  2019 -- 2020 & \href{https://www.araastat.com/BIOF439}{\textbf{Data Visualization using R}}, FAES, NIH \\ 
+  2019 & \textbf{Programming with R}, Foreign Service Institute, Department of State \\ 
+   & \emph{3-day workshops introducing R in a Excel-dominant environment} \\ 
+  2018 -- 2022 & \textbf{Carpentries Workshops}, NIH and other locations \\ 
+   & \emph{both R- and Python-based} \\ 
+  2018 & \textbf{SQL for Programmers}, Brookings Institute \\ 
+  2017 & \textbf{Best Practices in Data Analysis}, Joint Statistical Meetings, Baltimore \\ 
+   & \emph{This is a continuing education course. I received all A's on my evaluations} \\ 
+  2017 & \textbf{Machine Learning using Python}, Freddie Mac \\ 
+   & \emph{This is a 32-hour corporate training program covering the background, theory, usage } \\ 
+   & \emph{and implementation of several machine learning methods} \\ 
+  2016 -- 2020 & \href{https://www.araastat.com/BIOF339}{\textbf{Practical R}}, FAES, NIH \\ 
+   & \emph{Introductory R course} \\ 
+  \end{tabular}
+
+\section{Education and Training}\label{education-and-training}
+
+\begin{longtable}{@{\extracolsep{\fill}}ll}
+1993 & \parbox[t]{0.85\textwidth}{%
+\textbf{B.Stat.(Hons.)}\hfill{\footnotesize Indian Statistical Institute}\newline
+  Kolkata, India\par%
+  \empty%
+\vspace{\parsep}}\\
+1995 & \parbox[t]{0.85\textwidth}{%
+\textbf{M.S. in Statistics}\hfill{\footnotesize University of Washington}\newline
+  Seattle, WA\par%
+  \empty%
+\vspace{\parsep}}\\
+2001 & \parbox[t]{0.85\textwidth}{%
+\textbf{Ph.D. in Biostatistics}\hfill{\footnotesize University of Washington}\newline
+  Seattle, WA\par%
+  \empty%
+\vspace{\parsep}}\\
+2001-2006 & \parbox[t]{0.85\textwidth}{%
+\textbf{Post-doctoral training}\hfill{\footnotesize National Cancer Institute}\newline
+  Bethesda, MD\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Genetic epidemiology, statistical genetics, bioinformatics%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+\end{longtable}
+
+\section{Work History}\label{work-history}
+
+\begin{longtable}{@{\extracolsep{\fill}}ll}
+2018-2021 & \parbox[t]{0.85\textwidth}{%
+\textbf{Co-chairman}\hfill{\footnotesize Department of Bioinformatics and Data Science, FAES Graduate School at NIH}\newline
+  Bethesda, MD\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Oversee the data science and bioinformatics cirruculum%
+\item Teach  high-demand classes on R (Practical R, and Data Visualization using R) and Python (Data Visualization using Python)%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+2011-2020 & \parbox[t]{0.85\textwidth}{%
+\textbf{Chief Data Scientist and Co-Founder}\hfill{\footnotesize Zansors}\newline
+  Arlington, VA\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Lead technical efforts in R\&D, product development%
+\item Algorithms, signal processing, analytics, data visualization%
+\item Work with engineers, app developers, UI/UX experts, business leaders%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+2010-2020 & \parbox[t]{0.85\textwidth}{%
+\textbf{Biostatistician (contractor with Kelly Government Services)}\hfill{\footnotesize National Institute for Arthritis, Musculoskeletal and Skin Diseases, NIH}\newline
+  Bethesda, MD\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Statistical and Machine Learning analyses with applications in Rheumatology%
+\item Computational statistics, Bayesian methods, machine learning, simulation, survival analysis, regression, visualization%
+\item Clinical trials, large administrative databases (Medicare, NIS, NHANES)%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+2009-2012 & \parbox[t]{0.85\textwidth}{%
+\textbf{Director, Machine Learning}\hfill{\footnotesize Tranzxn, LLC}\newline
+  Gaithersburg, MD\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Developing models for predicting hospital acquired conditions%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+2006-2009 & \parbox[t]{0.85\textwidth}{%
+\textbf{Assistant Professor}\hfill{\footnotesize Division of Biostatistics, Thomas Jefferson University}\newline
+  Philadelphia, PA\par%
+  \vspace{0.1cm}\begin{minipage}{0.7\textwidth}%
+\begin{itemize}%
+\item Biostatistics, Bioinformatics, Oncology%
+\item Supported the Kimmel Cancer Center%
+\end{itemize}%
+\end{minipage}%
+\vspace{\parsep}}\\
+\end{longtable}
+
+\section{Professional Service}\label{professional-service}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Member, Data Safety Monitoring Boards, National Institute of Mental
+  Heath, NIH
+\item
+  Member, NIH SBIR review committees related to neurobiology
+\item
+  Reviewer for various academic journals.
+\end{enumerate}
+
+\section{Professional Memberships}\label{professional-memberships}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  American Statistical Association
+\end{enumerate}
+
+\section{Community Leadership}\label{community-leadership}
+
+\begin{tabular}{ll}
+  2018-2019 & \textbf{Board of Directors}, \href{http://www.sanskriti-dc.org}{Sanskriti, Inc.} \\ 
+   & \emph{A socio-cultural organization supporting the Bengali community} \\ 
+   & \emph{in Montgomery County and the greater DC area} \\ 
+  2013-2016 & \textbf{Board of Directors}, \href{https://www.datacommunitydc.org}{Data Community DC} \\ 
+  2011-2020 & \textbf{Co-organizer}, Statistical Programming DC \\ 
+   & \emph{Originally the DC R Users Group, this meetup brings together} \\ 
+   & \emph{the DC data science community to share and discuss data science implementations in R and Python} \\ 
+  \end{tabular}
+
+\section{Publications}\label{publications}
+
+\subsection{Ph.D.~Thesis}\label{ph.d.-thesis}
+
+\phantomsection\label{refs-62a838691798a1c4ca76e8035c2a30c5}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-Dasgupta2001}
+\CSLLeftMargin{1. }%
+\CSLRightInline{Dasgupta, A. (2001). \emph{Parametric Identifiability
+and related problems} {[}PhD thesis{]}. University of Washington.}
+
+\end{CSLReferences}
+
+\subsection{Books}\label{books}
+
+\phantomsection\label{refs-9b1a6c5914c6fcea964e6672e8920d4b}
+\begin{CSLReferences}{0}{0}
+\bibitem[\citeproctext]{ref-Tattar2017}
+\CSLLeftMargin{1. }%
+\CSLRightInline{Tattar, P., Ojeda, T., Murphy, S. P., Bengfort, B., \&
+Dasgupta, A. (2017). \emph{Practical data science cookbook, second
+edition}. Packt Publishing.}
+
+\bibitem[\citeproctext]{ref-Ojeda2014}
+\CSLLeftMargin{2. }%
+\CSLRightInline{Ojeda, T., Murphy, S. P., Dasgupta, A., \& Bengfort, B.
+(2014). \emph{Practical data science cookbook}. Packt Publishing.}
+
+\end{CSLReferences}
+
+\subsection{Articles}\label{articles}
+
+I have 72 peer-reviewed publications and abstracts. A full listing and
+citation statistics are available at my
+\href{https://scholar.google.com/citations?user=EgaGUCwAAAAJ&hl=en}{Google
+Scholar page}\\
+\vspace{0.5cm}
+
+\section{Publications}\label{publications-1}
+
+\subsection{Ph.D.~Thesis}\label{ph.d.-thesis-1}
+
+\subsection{Books}\label{books-1}
+
+\subsection{Articles}\label{articles-1}
+
+\subsection{Abstracts}\label{abstracts}
+
+\subsection{Manuscripts in progress}\label{manuscripts-in-progress}
+
+--\textgreater{}
+
+\end{document}
