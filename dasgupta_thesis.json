@@ -1,0 +1,23 @@
+[
+  {
+    "id": "Dasgupta2001",
+    "author": [
+      {
+        "family": "Dasgupta",
+        "given": "Abhijit"
+      }
+    ],
+    "citation-key": "Dasgupta2001",
+    "genre": "phdthesis",
+    "issued": {
+      "date-parts": [
+        [
+          "2001"
+        ]
+      ]
+    },
+    "publisher": "University of Washington",
+    "title": "Parametric Identifiability and related problems",
+    "type": "thesis"
+  }
+]

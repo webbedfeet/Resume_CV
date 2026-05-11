@@ -22,13 +22,15 @@ gs <- get_publications(scholar_id) # Read the citations
 #' a lower-case letter to the key.
 #'
 gs_processed <- gs %>%
-  separate(number, c('vol1','page'), sep = ', ', fill = 'right') %>%
-  separate(vol1, c('vol','num'), sep = ' \\(', fill = 'right') %>%
-  mutate(num = str_squish(str_remove(num, '\\)')),
-         page = str_squish(page),
-         author = str_replace_all(author, ',',' and'),
-         journal = str_to_title(journal),
-         first_author = str_match(author, '[A-Z]+ ([:alpha:]+)')[,2]) %>%
+  separate(number, c('vol1', 'page'), sep = ', ', fill = 'right') %>%
+  separate(vol1, c('vol', 'num'), sep = ' \\(', fill = 'right') %>%
+  mutate(
+    num = str_squish(str_remove(num, '\\)')),
+    page = str_squish(page),
+    author = str_replace_all(author, ',', ' and'),
+    journal = str_to_title(journal),
+    first_author = str_match(author, '[A-Z]+ ([:alpha:]+)')[, 2]
+  ) %>%
   group_by(first_author, year) %>%
   mutate(key = paste(first_author, year, letters[1:n()], sep = '')) %>%
   ungroup() %>%
@@ -38,9 +40,11 @@ gs_processed <- gs %>%
 #' LaTeX symbols
 #'
 gs_processed <- gs_processed %>%
-  mutate(title = str_replace(title, '\\\\# 946;','beta'),
-         title = str_replace(title, '&', '\\\\&'),
-         title = str_replace(title, '#','')) %>%
+  mutate(
+    title = str_replace(title, '\\\\# 946;', 'beta'),
+    title = str_replace(title, '&', '\\\\&'),
+    title = str_replace(title, '#', '')
+  ) %>%
   filter(!is.na(year))
 
 #' Scholar often provides truncated author lists. The following code obtains
@@ -50,16 +54,17 @@ pubid_to_complete <- gs_processed |>
   filter(str_detect(author, '\\.\\.\\.$')) |>
   pull(pubid)
 
-chunk2 <- function(x,n) split(x, cut(seq_along(x), n, labels = FALSE))
+chunk2 <- function(x, n) split(x, cut(seq_along(x), n, labels = FALSE))
 
 chunked_pubids <- chunk2(pubid_to_complete, 5)
 authors <- vector('list', 5)
-for (i in seq_along(chunked_pubids)){
+for (i in seq_along(chunked_pubids)) {
   Sys.sleep(5)
   authors[[i]] <- get_complete_authors(scholar_id, chunked_pubids[[i]])
 }
 
-authors_tbl <- do.call(c, authors) |> as_tibble(rownames = 'pubid') |>
+authors_tbl <- do.call(c, authors) |>
+  as_tibble(rownames = 'pubid') |>
   rename(full_author = value)
 
 gs_processed <- gs_processed |>
@@ -67,7 +72,7 @@ gs_processed <- gs_processed |>
   mutate(author = if_else(is.na(full_author), author, full_author)) |>
   select(-full_author)
 
-board |> pin_write(gs_processed, 'scholar', versioned=TRUE, type='parquet')
+board |> pin_write(gs_processed, 'scholar', versioned = TRUE, type = 'parquet')
 #' Create bibtex entries using `glue`. Almost all GScholar entries are journal
 #' articles, so I use that.
 # writeLines(

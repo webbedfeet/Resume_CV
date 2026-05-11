@@ -1,0 +1,130 @@
+[
+  {
+    "id": "landiGeneExpressionSignatures2007",
+    "author": [
+      {
+        "family": "Landi",
+        "given": "Maria"
+      },
+      {
+        "family": "Dracheva",
+        "given": "Tatiana"
+      },
+      {
+        "family": "Rotunno",
+        "given": "Melissa"
+      },
+      {
+        "family": "Shih",
+        "given": "Joanna"
+      },
+      {
+        "family": "Dasgupta",
+        "given": "Abhijit"
+      },
+      {
+        "family": "Consonni",
+        "given": "Dario"
+      },
+      {
+        "family": "Pesatori",
+        "given": "Angela"
+      },
+      {
+        "family": "Figueroa",
+        "given": "Jonine"
+      },
+      {
+        "family": "Wacholder",
+        "given": "Sholom"
+      },
+      {
+        "family": "Bertazzi",
+        "given": "PierAlberto"
+      },
+      {
+        "literal": "others"
+      }
+    ],
+    "citation-key": "landiGeneExpressionSignatures2007",
+    "issued": {
+      "date-parts": [
+        [
+          "2007"
+        ]
+      ]
+    },
+    "publisher": "American Association for Cancer Research",
+    "title": "Gene expression signatures of cigarette smoking in tumor and normal lung tissue from EAGLE",
+    "type": "book"
+  },
+  {
+    "id": "Ojeda2014",
+    "author": [
+      {
+        "family": "Ojeda",
+        "given": "T"
+      },
+      {
+        "family": "Murphy",
+        "given": "S P"
+      },
+      {
+        "family": "Dasgupta",
+        "given": "A"
+      },
+      {
+        "family": "Bengfort",
+        "given": "B"
+      }
+    ],
+    "citation-key": "Ojeda2014",
+    "issued": {
+      "date-parts": [
+        [
+          "2014"
+        ]
+      ]
+    },
+    "publisher": "Packt Publishing",
+    "title": "Practical data science cookbook",
+    "type": "book"
+  },
+  {
+    "id": "Tattar2017",
+    "author": [
+      {
+        "family": "Tattar",
+        "given": "Prabhanjan"
+      },
+      {
+        "family": "Ojeda",
+        "given": "Tony"
+      },
+      {
+        "family": "Murphy",
+        "given": "Sean Patrick"
+      },
+      {
+        "family": "Bengfort",
+        "given": "Benjamin"
+      },
+      {
+        "family": "Dasgupta",
+        "given": "Abhijit"
+      }
+    ],
+    "citation-key": "Tattar2017",
+    "ISBN": "1-78712-962-4",
+    "issued": {
+      "date-parts": [
+        [
+          "2017"
+        ]
+      ]
+    },
+    "publisher": "Packt Publishing",
+    "title": "Practical data science cookbook, second edition",
+    "type": "book"
+  }
+]

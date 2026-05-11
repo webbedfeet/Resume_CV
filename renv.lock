@@ -193,10 +193,10 @@
     },
     "cpp11": {
       "Package": "cpp11",
-      "Version": "0.5.4",
+      "Version": "0.5.5",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "04ac7bc64258a9008e460e0bef38792c"
+      "Hash": "20ecb9105a3fb48a8390919abc3b7e90"
     },
     "crayon": {
       "Package": "crayon",
@@ -214,10 +214,10 @@
     },
     "data.table": {
       "Package": "data.table",
-      "Version": "1.18.2.1",
+      "Version": "1.18.4",
       "Source": "Repository",
       "Repository": "CRAN",
-      "Hash": "df99cd4333ce592df5173d6ad39b5c14"
+      "Hash": "da9ddede68a6f6e5d3098c0ab81b6e1f"
     },
     "dbplyr": {
       "Package": "dbplyr",
@@ -813,13 +813,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "9380d36888b72faf5ae6c22b44703867"
-    },
-    "vitae": {
-      "Package": "vitae",
-      "Version": "0.6.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "3ffbc747d1700570515340cf82af83ac"
     },
     "vroom": {
       "Package": "vroom",

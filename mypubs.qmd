@@ -1,0 +1,31 @@
+---
+title: "My Publications"
+bibliography: dasgupta_articles.json
+citeproc: false
+#csl: nature-no-etal-adg.csl
+csl: apa-numeric-superscript.csl
+format: 
+  html: default
+engine: knitr
+filters:
+  - michaelaye/highlight-author
+  #- michaelaye/chronobib
+highlight-author: "Dasgupta"
+nocite: |
+  @*
+---
+
+```{r}
+#| echo: false
+#| messages: false
+#| warning: false
+bl=jsonlite::read_json('dasgupta_articles.json')
+```
+
+**There are `{r} length(bl)` references**
+
+
+::: {#refs}
+:::
+
+
